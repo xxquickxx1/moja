@@ -1,0 +1,30 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span9 white">
+<%= render 'layouts/breadcrumb' %>
+<h3>Our great clients</h3>
+
+<% @portfolio.each do |t| %>
+
+<ul class="thumbnails port">
+  <li class="span4">
+    <div class="thumbnail">
+    <%= link_to (image_tag t.photo.url), t %>
+
+      <h3><%= t.name %></h3>
+      <p><%= t.description %></p>
+    </div>
+  </li>
+</ul>
+
+<% end %>
+
+</div>
+
+<div class="span2 white pull-right">
+<h4>Your shopping cart is empty</h4>
+</div>
+
+</div>
+</div>

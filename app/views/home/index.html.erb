@@ -1,0 +1,73 @@
+
+<div class="container home-container">
+
+
+
+</div>
+
+
+
+<div class="row-fluid">
+
+<div class="span4 white padding-10 rounded-box margin-top20 home-tab-466">
+<img src="/images/home-files/save-money.jpg" class="img-rounded">
+<h4>Suits every budget</h4>
+<ul>
+<li>Low-Mid-High budget websites or apps</li>
+<li>Accessible &amp; SEO friendly!</li>
+<li>Well planned UX</li>
+<li>Host &amp; domain setup</li>
+<li>Free professional advice</li>
+<li>Latest technologies used</li>
+<li>Very slim websites save host space</li>
+<li>Free contact form</li>
+<li>Free slider</li>
+</ul>
+</div>
+
+<div class="span4 white margin-top20 padding-10 rounded-box home-tab-466">
+<img src="/images/home-files/browsers.jpg" class="img-rounded">
+<h4>All browsers supported</h4>
+<p>Websites are tested on all latest versions of major browsers.</p>
+<ul>
+<li>Google Chrome</li>
+<li>Mozilla Firefox</li>
+<li>Opera</li>
+<li>Apple Safari</li>
+<li>Internet Explorer</li>
+</ul>
+<br />
+</div>
+
+<div class="span4 white margin-top20 padding-10 rounded-box home-tab-466">
+<img src="/images/home-files/seo.jpg" class="img-rounded">
+<h4>Free Onsite SEO</h4>
+<p>With most of new websites, do not miss out your chance to be on top of all major search engines!</p>
+<ul>
+<li><strong>Google</strong></li>
+<li><strong>Bing</strong></li>
+<li><strong>Yahoo</strong></li>
+</ul>
+<span class="pull-right"><%= link_to 'SEO Plans', seo_path, class: 'button-link' %></span>
+</div>
+</div>
+
+
+<hr class="faded" />
+<center><h4>Our Clients</h4></center>
+<div class="row-fluid white padding-20 rounded-box">
+<% @portfolio.each do |portfolios| %>
+<div class="span4 text-center">
+<%= link_to (image_tag portfolios.photo.url, class: 'img-polaroid img-rounded small-photo-thumb'), portfolios %>
+</div>
+
+<% end %>
+
+</div>
+
+
+
+
+<!-- End of container -->
+</div>
+

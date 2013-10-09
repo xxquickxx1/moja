@@ -1,0 +1,30 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span8 white">
+<%= render 'layouts/breadcrumb' %>
+<h3>Welcome to WebDesignStories</h3>
+<%= simple_form_for @testimonial do |t| %>
+
+<%= t.input :name %>
+<%= t.input :website %>
+<%= t.input :description %>
+<%= t.submit %>
+
+
+<% end %>
+
+</div>
+
+<div class="span3 white pull-right">
+<h5>See what our clients say</h5>
+<ul>
+<li>Oliver Rodway</li>
+<p>Developing my website with Thomas has been a great experience. He seems to really cares about his work and his clients. He has worked hard to get the job done just right and to create the website just as I wanted it - while at the same</p>
+</ul>
+</div>
+
+</div>
+</div>
+
+

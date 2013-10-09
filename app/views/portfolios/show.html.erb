@@ -1,0 +1,26 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span9 white">
+<%= render 'layouts/breadcrumb' %>
+<h3>Project overview</h3>
+
+<h5><%= @portfolio.name %></h5>
+<h5>Website url</h5>
+<p><%= @portfolio.url %></p>
+<h5>Category</h5>
+<p><%= @portfolio.category %></p>
+<h5>Description</h5>
+<p><%= @portfolio.description %></p>
+
+<%= image_tag @portfolio.photo.url %>
+
+
+</div>
+
+<div class="span2 white pull-right">
+<h4>Your shopping cart is empty</h4>
+</div>
+
+</div>
+</div>
