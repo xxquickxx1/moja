@@ -16,7 +16,7 @@
     <ul>
     <li><%= link_to root_path do %>
 
-    <%= image_tag '/images/logo.png', width: '55px', class: 'logo' %>
+    <%= image_tag '/images/logo1.png', width: '55px', class: 'logo' %>
 
     <% end %></li>
       <li class="drop"> <%= link_to 'About', about_path %>
@@ -76,21 +76,31 @@
             </div>
           </div>
         </div>
+        <% if controller.action_name == 'index' %>
          <footer>
           
           <%= render 'layouts/footer' %>
 
           </footer>
-      </div> <!--! end of .container -->
 
+          <% else %>
+      </div> <!--! end of .container -->
+<footer>
+          
+          <%= render 'layouts/footer' %>
+
+          </footer>
     </div> <!--! end of #main -->
+    <% end %>
+
 
 
 <!-- Contact Modal -->
 <div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">We're Here To Help!</h3>
+    <span><h3 id="myModalLabel">We're Here To Help!</h3></span>
+    
   </div>
   <div class="modal-body">
 <!-- Modal Body -->
@@ -100,14 +110,15 @@
     <input type="text" placeholder="Your name.." style="width:260px; height:40px;"><br />
     <input type="text" placeholder="Email address.." style="width:260px; height:40px;"><br />
     <input type="text" placeholder="Phone number.." style="width:260px; height:40px;"><br />
-    <textarea style="width:260px; height: 260px;" placeholder="Your message.."></textarea><br />
+    <textarea style="width:260px; height: 140px;" placeholder="Your message.."></textarea><br />
   </fieldset>
 </form>
 </div>
 <div class="modalRightCol">
+<img src="/images/logo1.png" style="float:left;" hspace="20px">
 <h4 class="green">Send us a message or simply use one of the options below.</h4>
 <br />
-<h5 class="muted">Email: thomas.webdesign@yahoo.com</h5>
+<h5 class="muted">E: thomas.webdesign@yahoo.com</h5>
 <h5 class="muted">Tel: (+44) 7719731397</h5>
 <hr />
 <h5 class="green">Have you seen our <%= link_to 'websites for sale', sales_path %>?</h5>

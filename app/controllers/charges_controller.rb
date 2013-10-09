@@ -5,7 +5,7 @@ def new
 	@sale = Sale.find(params[:website_id])
   @website_id = params[:website_id]
 	 @price = Sale.where(:id => @website_id).pluck(:price).first
-	 @amount = (@price * 100)
+	 @amount = (@price.to_i * 100)
 
 end
 

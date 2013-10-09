@@ -24,6 +24,10 @@ body{
 	}
 }
 
+.uppercase{
+	text-transform: uppercase;
+}
+
 .margin-top-20{
 	margin-top:20px;
 }
@@ -313,9 +317,23 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 .footer{
 	min-height:300px;
 	border-top:1px solid lightgrey;
-
+	padding-bottom:30px;
 	.span4{
 	padding:20;
 	margin-top:20px;
 	}
+
+	.footer-right{
+	margin-top:84px;
+	}
+
+}
+
+
+.margin-bottom-100{
+	margin-bottom:100px;
+}
+
+.blue{
+	color: rgb(32,147,192);
 }

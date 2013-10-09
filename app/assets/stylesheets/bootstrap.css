@@ -231,7 +231,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #4c4c4c;
+  color: #777;
   background-color: #ffffff;
 }
 
@@ -750,6 +750,15 @@ h6 {
   line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility;
+}
+
+h3{
+  color:rgb(211,211,211);
+  text-transform: uppercase;
+}
+
+h4{
+  color:rgb(32,147,192);
 }
 
 h1 small,
@@ -3987,12 +3996,15 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a {
   display: block;
   color: #181a17;
+  -moz-font-smoothing: antialiased;
+-moz-transition:all ease-in 0.3s;
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #0AA1EC;
+  color:white;
 }
 
 .nav > li > a > img {

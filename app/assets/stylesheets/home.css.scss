@@ -85,7 +85,7 @@ display: inline-block;
 -moz-border-radius: 3px;
 border-radius: 3px;
 border: none;
-border-bottom: 3px solid #388038;
+border-bottom: 4px solid #388038;
 white-space: nowrap;
 cursor: pointer;
 vertical-align: baseline;
@@ -106,4 +106,12 @@ background: #5bb75b;
 	background: #49a749;
   text-decoration: none !important;
   border-color: #2f6a2f;
+}
+
+
+.big-link{
+	padding: 20px 20px;
+	width:200px;
+	text-align:center;
+
 }

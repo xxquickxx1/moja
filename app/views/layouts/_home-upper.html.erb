@@ -4,39 +4,34 @@
 <div class="pull-right margin-top-20 margin-bottom-20">
     <ul class="nav nav-pills">
     <li class="active">
-    <a href="#">Website</a>
+    <a href="#">Home</a>
     </li>
-    <li><%= link_to 'About', about_path %></li>
     <li><%= link_to 'Website', websites_path %></li>
-    <li><%= link_to 'Sign In', new_user_session_path %></li>
-    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'SEO', seo_path %></li>
+    <li><%= link_to 'For Sale', sales_path %></li>
+     <li><a href="#contactModal" data-toggle="modal">Contact</a></li>
     </ul>
     
 </div>
 </div>
 
 
-<div class="row home-form">
-<div class="span6">
+<div class="row-fluid home-form">
+<div class="span12">
 <div class="hero-unit">
-<h2>Repair myacc link and front nav</h2>
-<p>Get your brand new professional website in no tme!</p>
-<button class="button-link-green">Get Website</button>
+<img src="/images/logoBig.png" style="float:left;" hspace="20px">
+<h1 style="margin-top:37px;">Web Design Stories</h1>
+<h2><span class="green">Easiest way to start online presence</span></h2>
+<br /><br />
+<p>Professional And Affordable Website / Applications Design &amp; Development<br />
+From scratch!</p>
+<span class="pull-right">
+<%= link_to 'New Website', websites_path, class: 'button-link-green big-link' %>
+</span>
+<br />
 </div>
 </div>
 
-<div class="span6">
-    <form>
-    <fieldset>
-    <span class="help-block">Get in touch and tell us what you need!</span>
-    <input type="text" placeholder="Your name" id="firstField">
-    <input type="text" placeholder="Your phone">
-    <input type="text" placeholder="Email address" id="wideField">
-    <textarea id="wideField" placeholder="Type your message here" rows="5"></textarea>
-    <button type="submit" class="buton-link">Submit</button>
-    </fieldset>
-    </form>
-</div>
 
 </div>
 </div>
@@ -56,3 +51,41 @@
 <img src="/images/home-files/datavis-large.png" class="img-circle" style="border: solid 7px lightgrey;">
 <p>Manage Existing Website</p>
 </div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <span><h3 id="myModalLabel">We're Here To Help!</h3></span>
+    
+  </div>
+  <div class="modal-body">
+<!-- Modal Body -->
+<div class="modalLeftCol">
+    <form>
+  <fieldset>
+    <input type="text" placeholder="Your name.." style="width:260px; height:40px;"><br />
+    <input type="text" placeholder="Email address.." style="width:260px; height:40px;"><br />
+    <input type="text" placeholder="Phone number.." style="width:260px; height:40px;"><br />
+    <textarea style="width:260px; height: 140px;" placeholder="Your message.."></textarea><br />
+  </fieldset>
+</form>
+</div>
+<div class="modalRightCol">
+<img src="/images/logo1.png" style="float:left;" hspace="20px">
+<h4 class="green">Send us a message or simply use one of the options below.</h4>
+<br />
+<h5 class="muted">E: thomas.webdesign@yahoo.com</h5>
+<h5 class="muted">Tel: (+44) 7719731397</h5>
+<hr />
+<h5 class="green">Have you seen our <%= link_to 'websites for sale', sales_path %>?</h5>
+</div>
+
+<!-- Modal Body -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-success">Send Message</button>
+  </div>
+</div>
+<!-- Contact Modal -->

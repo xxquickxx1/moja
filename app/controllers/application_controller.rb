@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
 def validate_admin
-  redirect_to root_url unless user_signed_in? && current_user.try(:admin?)
+  redirect_to root_url and return unless user_signed_in? && current_user.try(:admin?)
   flash[:alert] = "No access to this page"
 end
 
