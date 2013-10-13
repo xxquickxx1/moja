@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'pony'
 gem 'stripe'
+gem 'devise_invitable', '~> 1.1.0'
 group :assets do
   gem 'therubyracer', :platform=>:ruby
 end
