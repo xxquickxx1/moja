@@ -5,6 +5,12 @@ class WebsitesController < ApplicationController
 
   # GET /websites/1
   # GET /websites/1.json
+
+def responsive
+@breadcrumb = "Responsive Design"
+render 'websites/responsive-design'
+end
+
 def existingwebsite
   @breadcrumb = "Existing Website"
   render 'websites/existing-website'

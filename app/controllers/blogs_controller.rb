@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   before_filter :validate_admin, :only => [:new, :edit]
+  
   def blog
     @breadcrumb = "Blog"
     @blogs = Blog.all

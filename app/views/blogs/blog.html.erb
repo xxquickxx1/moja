@@ -1,25 +1,22 @@
-<h1>Stories</h1>
 
 <div class="home-container">
-<div class="row">
+<div class="row-fluid">
 
-<div class="span9 white">
+<div class="span12 white padding-20">
 <%= render 'layouts/breadcrumb' %>
 <h3>Welcome to our website</h3>
 
 <% @blogs.each do |blog| %>
-  
+  <span class="pull-right blue">Posted: <%= time_ago_in_words(blog.created_at) %> ago</span>
     <h4><%= blog.title %></h4>
     <i><%= blog.category %></i>
     <p><%= blog.description %></p>
 
+    <%= link_to 'Read', :controller => 'blogs', :action => 'show', :id => blog %>
+
   
 <% end %>
 
-</div>
-
-<div class="span2 white pull-right">
-<h4>Your shopping cart is empty</h4>
 </div>
 
 </div>

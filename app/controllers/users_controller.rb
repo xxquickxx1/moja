@@ -1,33 +1,43 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-
-  def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.all
-  end
-
-  def show
-    @user = User.find(params[:id])
-  end
   
-  def update
-    authorize! :update, @user, :message => 'Not authorized as an administrator.'
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user], :as => :admin)
-      redirect_to users_path, :notice => "User updated."
+before_filter :authenticate_user!
+
+
+  def dashboard
+    @usersites = current_user.usersites.find(:all)
+    @quick_question = QuickQuestion.new
+    
+  end
+
+  def addwebsite
+    @usersite = current_user.usersites.new
+   render 'users/add-website'
+  end
+
+  def createaddwebsite
+    @usersite = current_user.usersites.create(params[:usersite])
+    if @usersite.save
+        redirect_to dashboard_path, :notice => 'Your website has been added. Thank you!'
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to :back, :alert => 'There was problem adding your website. Try again!'
     end
   end
-    
-  def destroy
-    authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
-    user = User.find(params[:id])
-    unless user == current_user
-      user.destroy
-      redirect_to users_path, :notice => "User deleted."
+
+  def inbox
+    @messages = current_user.messages(:all)
+
+  end
+
+  def showmessage
+    @message = Message.find(params[:id])
+  end
+
+  def deletemessage
+    @message = Message.find(params[:id])  
+    if @message.destroy
+        redirect_to inbox_path, :notice => 'Your message has been discarded'
     else
-      redirect_to users_path, :notice => "Can't delete yourself."
-    end
+        redirect_to inbox_path, :alert => 'There was a problem with deleting your message'
+      end
   end
 end

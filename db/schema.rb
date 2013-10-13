@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006200931) do
+ActiveRecord::Schema.define(:version => 20131012142440) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20131006200931) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "subject"
+    t.text     "description"
+    t.string   "website_link"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "portfolios", :force => true do |t|
     t.string   "url"
@@ -33,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20131006200931) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  create_table "quick_questions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "subject"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "quick_questions", ["user_id"], :name => "index_quick_questions_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -129,6 +150,13 @@ ActiveRecord::Schema.define(:version => 20131006200931) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "usersites", :force => true do |t|
+    t.string   "website_link"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+  end
 
   create_table "websites", :force => true do |t|
     t.string   "design"

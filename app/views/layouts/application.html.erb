@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Webdesignstories" %></title>
        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Webdesignstories" %>">
-    <%= stylesheet_link_tag "application", "bootstrap", "home", "fancybox", "fancybox-buttons", :media => "all" %>
+    <%= stylesheet_link_tag "application", "bootstrap", "home", "fancybox", "fancybox-buttons", "animate", :media => "all" %>
     <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
@@ -40,6 +40,7 @@
             <ul>
               <li><%= link_to 'New Website', websites_path %></li>
               <li><%= link_to 'Existing Website', existingwebsite_path %></li>
+              <li><%= link_to 'Responsive Design', responsive_path %></li>
 
             </ul>
           </div>
@@ -54,9 +55,15 @@
     <li><%= link_to 'Blog', blog_path %></li>
 
 
-    <li class="pull-right helpbuttons"><a href="#contactModal" data-toggle="modal" class=" btn btn-success margin-top-10">Contact</a></li>
+    <li class="pull-right helpbuttons">
+    <a href="#contactModal" data-toggle="modal" class=" btn btn-success margin-top-10">Contact</a></li>
+   <% if user_signed_in? %>
+        <li class="pull-right"><%= link_to 'My Account', dashboard_path %></li>
+    <% else %>
+        <li class="pull-right "><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li class="pull-right "><%= link_to 'Log In', new_user_session_path %></li>
+      <% end %>
       
-
     </ul>
 </nav>
 

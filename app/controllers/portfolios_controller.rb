@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
   before_filter :validate_admin, :only => [:new, :edit]
   def portfolio
+    @breadcrumb = "Portfolio Items"
     @portfolio = Portfolio.order("created_at DESC").all
 
   	render 'portfolios/portfolio'
@@ -8,6 +9,7 @@ class PortfoliosController < ApplicationController
 
   def show
   	@portfolio = Portfolio.find(params[:id])
+    @breadcrumb = @portfolio.name
   end
  
  def new

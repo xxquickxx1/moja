@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -52,7 +62,6 @@ padding-top:20px;
 padding-bottom:20px;
 
 	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12{
-	padding:10px;
 	-webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -80,8 +89,8 @@ padding-bottom:20px;
 	float:left
 }
 
-.port:nth-child(2n + 1){
-	float:right
+.port:nth-child(2n + 2){
+	margin-left:20px;
 }
 
 .port li{
@@ -336,4 +345,12 @@ ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
 
 .blue{
 	color: rgb(32,147,192);
+}
+
+.about-thumbs > ul li{
+	margin-left:80px;
+}
+
+form.simple_form{
+	display:inline;
 }

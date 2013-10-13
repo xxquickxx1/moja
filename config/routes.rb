@@ -1,5 +1,9 @@
 Webdesignstories::Application.routes.draw do
-  
+
+   post "quick_questions/create", to: 'quick_questions#create', as: :quick_questions
+
+root :to => "home#index"
+
   get '/testimonials', to: 'testimonials#testimonial', as: :testimonial
   resources :testimonials
 
@@ -15,6 +19,7 @@ end
 
  get '/shopping_cart', to: 'shopping_cart_items#shopping_cart', as: :shopping_cart
  
+
   get '/blog', to: 'blogs#blog', as: :blog
   resources :blogs
 
@@ -25,7 +30,7 @@ end
  get '/sales', to: 'sales#sales', as: :sales
   resources :sales
 
-
+get '/responsive-design', to: 'websites#responsive', as: :responsive
 get '/websites', to: 'websites#new', as: :websites_path
   resources :websites
   
@@ -36,11 +41,20 @@ get '/seo', :to => 'home#seo', as: :seo
 get '/about', :to => 'home#about', as: :about
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'users#dashboard'
   end
-  root :to => "home#index"
 devise_for :users do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
+
+match 'users/createaddwebsite', to: 'users#createaddwebsite', as: :createaddwebsite
+get 'users/add-website', to: 'users#addwebsite', as: :addwebsite
+resources :usersites
+
+
+match '/users/message/:id', to: 'users#deletemessage', via: :delete
+get '/users/message/:id', to: 'users#showmessage', as: :message
+get '/users/inbox', to: 'users#inbox', as: :inbox
+get '/users/myaccount', to: 'users#dashboard', as: :dashboard
   resources :users
 end
