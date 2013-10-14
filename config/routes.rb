@@ -1,5 +1,9 @@
 Webdesignstories::Application.routes.draw do
 
+  namespace :admn do
+    resources :users
+  end
+
    post "quick_questions/create", to: 'quick_questions#create', as: :quick_questions
 
 root :to => "home#index"

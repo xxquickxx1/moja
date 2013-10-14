@@ -3,9 +3,8 @@
 
 <div class="span12 white padding-20">
 <%= render 'layouts/breadcrumb' %>
-<h3>Project overview</h3>
+<h3><%= @portfolio.name %></h3>
 
-<h5><%= @portfolio.name %></h5>
 <h5>Website url</h5>
 <p><%= @portfolio.url %></p>
 <h5>Category</h5>
@@ -13,8 +12,11 @@
 <h5>Description</h5>
 <p><%= @portfolio.description %></p>
 
-<%= image_tag @portfolio.photo.url %>
-
+<div class="row-fluid">
+<div class="span12 text-center">
+<%= image_tag @portfolio.photo.url, class: 'img-polaroid' %>
+</div>
+</div>
 
 </div>
 </div>

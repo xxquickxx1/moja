@@ -1,14 +1,50 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="home-container">
+<div class="row-fluid white rounded-box">
+<div class="span12 padding-20">
+<h2>Edit Account</h2>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :email, :required => true %>
-  <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+  <%= f.input :password, :autocomplete => "off", :hint => "Leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+  <%= f.button :submit, 'Update', :class => 'btn-primary' %> or
 <% end %>
-<h3>Cancel my account</h3>
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-<%= link_to "Back", :back %>
+
+<a href="#contactModal" data-toggle="modal" class="btn btn-danger margin-top-10">Cancel Account</a></li>
+
+</div>
+</div>
+</div>
+
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <span><h3 id="myModalLabel">Cancel My Account</h3></span>
+    
+  </div>
+  <div class="modal-body">
+<!-- Modal Body -->
+<div class="modalLeftCol">
+  
+<p>We're sorry to see you go.. <br />
+If you were unhappy with our services please give us a quick mail so we can try to help.</p>
+
+</div>
+<div class="modalRightCol">
+<img src="/images/logo1.png" style="float:left;" hspace="20px">
+
+</div>
+
+<!-- Modal Body -->
+  </div>
+  <div class="modal-footer">
+   <span class="pull-left"> <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Close</button></span>
+    <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: 'btn btn-danger' %>
+  </div>
+</div>
+<!-- Contact Modal -->

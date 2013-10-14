@@ -3,20 +3,23 @@
 
 <div class="span12 white padding-20">
 <%= render 'layouts/breadcrumb' %>
-<h3>Our great clients</h3>
+<h3>Already With Us</h3>
 
 <% @portfolio.each do |t| %>
-
+<div class="portfolioItem">
 <ul class="thumbnails port">
-  <li class="span4">
+  <li class="span5">
     <div class="thumbnail">
     <%= link_to (image_tag t.photo.url), t %>
+    	<hr />
 
-      <h3><%= t.name %></h3>
-      <p><%= t.description %></p>
+      <h4 style="padding-left:10px;"><%= t.name %></h4>
+      <hr />
+      <p style="padding-left:10px;"><%= t.description %></p>
     </div>
   </li>
 </ul>
+</div>
 
 <% end %>
 
