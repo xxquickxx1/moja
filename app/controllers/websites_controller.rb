@@ -6,6 +6,11 @@ class WebsitesController < ApplicationController
   # GET /websites/1
   # GET /websites/1.json
 
+def no_page
+  render 'errors/404'
+
+end
+
 def responsive
 @breadcrumb = "Responsive Design"
 render 'websites/responsive-design'
@@ -15,16 +20,6 @@ def existingwebsite
   @breadcrumb = "Existing Website"
   render 'websites/existing-website'
 end
-
-  def show
-    @breadcrumb = "Website Order"
-    @website = Website.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @website }
-    end
-  end
 
   # GET /websites/new
   # GET /websites/new.json
@@ -46,8 +41,7 @@ end
 
     respond_to do |format|
       if @website.save
-        format.html { redirect_to @website, notice: 'Order has been placed! Thank you!' }
-        format.json { render json: @website, status: :created, location: @website }
+        format.html { redirect_to :back, notice: 'Thank you! We will be in touch with you very soon!' }
       else
         format.html { render action: "new" }
         format.json { render json: @website.errors, status: :unprocessable_entity }

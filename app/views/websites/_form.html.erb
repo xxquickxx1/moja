@@ -31,7 +31,9 @@
      <%= f.input :effects, as: :check_boxes, collection: [['Image slider', 'Image slider'], ['Dropdown menu', 'Dropdown menu'], ['Hover link/button/box effects', 'Hover link/button/box effects'], ['Video', 'Video'], ['Interactive map', 'Intractive map']], label: false %>
 
 <i><p class="muted">More effects available on request</p></i>
-
+ <%= f.input :email, label: 'Please enter your email', :required => true %>
+ <%= f.input :phone_number, label: 'Please enter your phone number', :required => true %>
+ <p>You will shortly receive your quote via email. Thank you!</p>
 
   <div class="form-actions">
   <span class="pull-right"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Place Order</button></span>
@@ -43,7 +45,7 @@
     <h3 id="myModalLabel">Website Order</h3>
   </div>
   <div class="modal-body">
-     <div class="span3 pull-right"><img src="images/sample-logo.png" width="200px"></div>
+     <div class="span3 pull-right"><img src="images/logo1.png"></div>
     <p><strong>Is your order complete?</strong></p>
     <small>
     <p>Click "<strong>Continue</strong>" to place your order<br />

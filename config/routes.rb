@@ -30,6 +30,7 @@ end
  get '/sales', to: 'sales#sales', as: :sales
   resources :sales
 
+get '/websites/:id', to: 'websites#no_page'
 get '/responsive-design', to: 'websites#responsive', as: :responsive
 get '/websites', to: 'websites#new', as: :websites_path
   resources :websites

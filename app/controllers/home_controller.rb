@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   # Pages controller
   def index
+    @pageTitle = "In House Design - Web Development & Design "
     @portfolio = Portfolio.order("created_at DESC").limit(3)
     
   end

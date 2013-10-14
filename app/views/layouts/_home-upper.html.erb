@@ -8,8 +8,15 @@
     </li>
     <li><%= link_to 'Website', websites_path %></li>
     <li><%= link_to 'SEO', seo_path %></li>
-    <li><%= link_to 'For Sale', sales_path %></li>
-     <li><a href="#contactModal" data-toggle="modal">Contact</a></li>
+    <li><a href="#contactModal" data-toggle="modal">Contact</a></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'My Account', dashboard_path %></li>
+    <% else %>
+    <li><%= link_to 'Log In', new_user_session_path %></li>
+    <li><%= link_to 'Register', new_user_registration_path %></li>
+
+    <% end %>
+
     </ul>
     
 </div>
@@ -20,7 +27,7 @@
 <div class="span12">
 <div class="hero-unit">
 <img src="/images/logoBig.png" style="float:left;" hspace="20px">
-<h1 style="margin-top:37px;">Web Design Stories</h1>
+<h1 style="margin-top:37px; color:white;">WEB DESIGN STORIES</h1>
 <h2><span class="green">Easiest way to start online presence</span></h2>
 <br /><br />
 <p>Professional And Affordable Website / Applications Design &amp; Development<br />
@@ -37,19 +44,27 @@ From scratch!</p>
 </div>
 </div>
 <div class="row-fluid white home-lower-row  ">
+
 <div class="span4 text-center">
-<img src="/images/home-files/ruby-large.png" class="img-circle" style="border: solid 7px lightgrey;">
-<p>Get New Website</p>
+<%= link_to(websites_path) do %>
+<img src="/images/home-files/new-website.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
+<strong>Get New Website</strong>
+<% end %>
 </div>
 
 <div class="span4 text-center">
-<img src="/images/home-files/webdev-large.png" class="img-circle" style="border: solid 7px lightgrey;">
-<p>Search Engine Optimization</p>
+<%= link_to(seo_path) do %>
+<img src="/images/home-files/seo-campaign.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
+<strong>Search Engine Optimization</strong>
+<% end %>
 </div>
 
 <div class="span4 text-center">
-<img src="/images/home-files/datavis-large.png" class="img-circle" style="border: solid 7px lightgrey;">
-<p>Manage Existing Website</p>
+<%= link_to(existingwebsite_path) do %>
+<img src="/images/home-files/manage-website.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
+<strong>Manage Existing Website</strong>
+<% end %>
+</div>
 </div>
 
 <!-- Contact Modal -->

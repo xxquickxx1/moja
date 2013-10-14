@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Webdesignstories" %></title>
+    <title><%= @pageTitle ||= "Webdesignstories" %></title>
        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Webdesignstories" %>">
     <%= stylesheet_link_tag "application", "bootstrap", "home", "fancybox", "fancybox-buttons", "animate", :media => "all" %>
     <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons" %>
