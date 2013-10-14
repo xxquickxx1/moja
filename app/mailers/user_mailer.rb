@@ -1,10 +1,7 @@
 class UserMailer < ActionMailer::Base
-  default from: "webdesignstories-notification@example.com"
+  default from: "wdstories@example.com"
 
-def welcome_email(email)
-@user = current_user
-@url = root_url + '/users/sign_in'
-mail(to: @user.email, subject: 'Welcomt to the website!')
-end
-
+  def post_email(email)
+    mail(:to => email, :subject => "Registered")
+   end
 end
