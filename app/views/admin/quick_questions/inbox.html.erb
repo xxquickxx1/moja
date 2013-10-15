@@ -3,16 +3,28 @@
 
 <div class="span12 white padding-20">
  
- <% @questions.each do |question| %>
+<div class="row-fluid">
+<div class="span4">
+<%= render partial: 'admin/shared/nav_tab' %>
+</div>
+
+<div class="span8">
+<% @questions.each do |question| %>
 <div class="inbox-row">
- <strong>Subject</strong>&nbsp;<% if question.subject %><%= question.subject.capitalize! %><% end %><br />
- <%= truncate question.description, length: 100 %>
+<span class="pull-right"><%= time_ago_in_words(question.created_at).capitalize %> ago</span>
+<%= link_to question.subject, admin_quick_question_path(question) %>
+<br />
+ <%= truncate question.description.capitalize, length: 100 %><br />
+
 
 <span class="pull-right"><%= link_to 'Read', admin_quick_question_path(question) %> | Delete</span>
 
  </div>
 
  <% end %>
+</div>
+</div>
+
 
 </div>
 </div>

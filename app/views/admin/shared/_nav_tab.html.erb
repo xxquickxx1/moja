@@ -1,0 +1,29 @@
+
+
+<ul class="nav nav-list blue-link">
+  <li class="nav-header">Main Navigation</li>
+  
+<li><%= link_to 'Dashboard', '/admin/' %></a></li>
+<li><% if User.all.size > 1 %><span class="badge badge-success pull-right" style="margin-top:4px; margin-right:10px;"><%= User.all.count %></span><% end %><%= link_to 'Users', admin_users_path %></li>
+
+</ul>
+
+<hr />
+
+<ul class="nav nav-list blue-link">
+  <li class="nav-header">Mesaging</li>
+
+<li><% if QuickQuestion.all.size > 0 %><span class="badge badge-success pull-right" style="margin-top:4px; margin-right:10px;"><%= QuickQuestion.all.count %></span><% end %>
+<%= link_to 'Inbox', admin_inbox_path %></li>
+
+</ul>
+
+<hr />
+
+<ul class="nav nav-list blue-link">
+  <li class="nav-header">Website Requests</li>
+
+<li><% if Website.all.size <= 4 %><span class="badge badge-success pull-right" style="margin-top:4px; margin-right:10px;"><%= Website.all.count %></span><% elsif Website.all.size > 4 %><span class="badge badge-important pull-right" style="margin-top:4px; margin-right:10px;"><%= Website.all.count %></span><% end %>
+<%= link_to 'Requests', admin_websites_path %></li>
+
+</ul>

@@ -6,11 +6,6 @@ class WebsitesController < ApplicationController
   # GET /websites/1
   # GET /websites/1.json
 
-def no_page
-  render 'errors/404'
-
-end
-
 def responsive
 @breadcrumb = "Responsive Design"
 render 'websites/responsive-design'
