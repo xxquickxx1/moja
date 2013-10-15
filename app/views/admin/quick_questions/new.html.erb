@@ -1,0 +1,15 @@
+<div class="home-container">
+<div class="row-fluid padding-20 white rounded-box">
+<div class="span12">
+
+<h5>Reply To: <span class="muted"><%= @user.name %></span></h5>
+
+<%= simple_form_for [:admin, @quick_question] do |message| %>
+
+<%= message.input :subject, :input_html => {value: 'Re: ' + @message.subject} %>
+<%= message.input :description, :input_html => {style: 'width:80%;', rows: 10} %>
+<%= button_to 'Reply', nil, class: 'button-link-green', :user_id => @user.id %>
+
+<% end %>
+
+</div></div></div>

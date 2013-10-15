@@ -44,27 +44,30 @@ From scratch!</p>
 </div>
 </div>
 <div class="row-fluid white home-lower-row  ">
-
-<div class="span4 text-center">
 <%= link_to(websites_path) do %>
-<img src="/images/home-files/new-website.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
-<strong>Get New Website</strong>
-<% end %>
-</div>
-
 <div class="span4 text-center">
+  <div class="rounded bg-turcus icon"><%= image_tag '/images/icons/Above-The-Fold-40.png', vspace: 40 %>
+  </div>
+  <strong>New Website</strong>
+</div>
+<% end %>
+
 <%= link_to(seo_path) do %>
-<img src="/images/home-files/seo-campaign.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
-<strong>Search Engine Optimization</strong>
-<% end %>
-</div>
-
 <div class="span4 text-center">
-<%= link_to(existingwebsite_path) do %>
-<img src="/images/home-files/manage-website.png" class="img-circle" style="border: solid 7px lightgrey;"><br />
-<strong>Manage Existing Website</strong>
-<% end %>
+  <div class="rounded bg-orange icon"><%= image_tag '/images/icons/SEO-Tag-40.png', vspace: 40 %>
+  </div>
+  <strong>Search Engine Optimization</strong>
 </div>
+<% end %>
+
+<%= link_to(existingwebsite_path) do %>
+<div class="span4 text-center">
+  <div class="rounded bg-light-red icon"><%= image_tag '/images/icons/Website-Optimization-40.png', vspace: 40 %>
+  </div>
+  <strong>Manage Website</strong>
+</div>
+<% end %>
+
 </div>
 
 <!-- Contact Modal -->

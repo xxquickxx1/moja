@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
 def validate_admin
   redirect_to root_url and return unless user_signed_in? && current_user.try(:admin?)
-  flash[:alert] = "No access to this page"
 end
 
 

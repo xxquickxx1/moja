@@ -1,7 +1,12 @@
 Webdesignstories::Application.routes.draw do
 
-  namespace :admn do
-    resources :users
+  namespace :admin do
+    
+    root :to => "base#dashboard"
+    get '/users/', to: 'users#home', as: :users
+    get '/inbox', to: 'quick_questions#inbox', as: :inbox
+    post '/quick_questions/create', to: 'quick_questions#create', as: :lol
+    resources :quick_questions
   end
 
    post "quick_questions/create", to: 'quick_questions#create', as: :quick_questions
@@ -21,7 +26,6 @@ resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection
 end
 
- get '/shopping_cart', to: 'shopping_cart_items#shopping_cart', as: :shopping_cart
  
 
   get '/blog', to: 'blogs#blog', as: :blog
@@ -43,7 +47,7 @@ get '/websites', to: 'websites#new', as: :websites_path
 get '/about/who-we-are', :to => 'home#whoweare', as: :whoweare
 get '/:id/account', :to => 'account#account'
 get '/seo', :to => 'home#seo', as: :seo
-get '/about', :to => 'home#about', as: :about
+get '/about', :to => 'home#whoweare', as: :about
 
   authenticated :user do
     root :to => 'users#dashboard'

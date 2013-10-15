@@ -1,0 +1,22 @@
+<div class="home-container">
+<div class="row-fluid white padding-20 rounded-box">
+<div class="span4">
+<ul class="nav nav-tabs nav-stacked">
+<li><%= link_to 'Dashboard', '/admin/' %></a></li>
+<li><% if User.all.size > 1 %><span class="badge badge-success pull-right" style="margin-top:10px; margin-right:10px;"><%= User.all.count %></span><% end %><%= link_to 'Users', admin_users_path %></li>
+
+<li><% if QuickQuestion.all.size > 1 %><span class="badge badge-success pull-right" style="margin-top:10px; margin-right:10px;"><%= QuickQuestion.all.count %></span><% end %>
+<%= link_to 'Inbox', admin_inbox_path %></li>
+
+</ul>
+</div>
+
+<div class="span8">
+
+</div>
+</div>
+
+
+
+
+</div>

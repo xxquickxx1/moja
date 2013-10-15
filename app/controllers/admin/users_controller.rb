@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::BaseController
-  def dashboard
+  def home
+  	@users = User.order("id DESC")
   end
 end

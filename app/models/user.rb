@@ -15,5 +15,6 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :usersites
   has_many :invitations, :class_name => self.to_s, :as => :invited_by
+  validates_presence_of :name
   
 end
