@@ -68,7 +68,7 @@ Webdesignstories::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "xxquickxx1@gmail.com",
-    password: 
+    password: ""
   }
 
 
