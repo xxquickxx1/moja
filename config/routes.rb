@@ -2,11 +2,13 @@ Webdesignstories::Application.routes.draw do
 
   namespace :admin do
     
-    root :to => "base#dashboard"
+    root :to => "base#dashboard", as: :root
     get '/users/', to: 'users#home', as: :users
     get '/inbox', to: 'quick_questions#inbox', as: :inbox
-    post '/quick_questions/create', to: 'quick_questions#create', as: :lol
+
     resources :quick_questions
+    post '/messages/create', to: 'quick_questions#create', as: :lol
+    resources :messages
   end
 
    post "quick_questions/create", to: 'quick_questions#create', as: :quick_questions

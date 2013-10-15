@@ -4,12 +4,12 @@
 From: <%= @user.name %> <span class="pull-right"><%= @user.email %></span>
 <hr />
 
-<h5>Subject: <%= @question.subject.capitalize! if @question.subject %> </h5>
+<h5>Subject: <%= @question.subject %> </h5>
 <p>
 <%= @question.description.capitalize!  if @question.description %>
 </p>
 
 <hr />
-<span class="pull-right"><%= link_to 'Reply', new_admin_quick_question_path(:user_id => @question.user.id, :message_id => @question.id) %></span>
+<span class="pull-right"><%= link_to 'Reply', new_admin_message_path(:user_id => @question.user.id, :message_id => @question.id) %></span>
 
 </div></div></div>

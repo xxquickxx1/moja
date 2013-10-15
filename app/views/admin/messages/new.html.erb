@@ -6,9 +6,9 @@
 
 <%= simple_form_for [:admin, @message] do |message| %>
 
-<%= message.input :subject, :input_html => {value: 'Re: '} %>
+<%= message.input :subject, :input_html => {value: 'Re: ' + @quick_question.subject} %>
 <%= message.input :description, :input_html => {style: 'width:80%;', rows: 10} %>
-<%= message.submit %>
+<%= button_to 'Reply', nil, class: 'button-link-green', :controller => :messages, :action => :create %>
 
 <% end %>
 

@@ -15,22 +15,11 @@ class Admin::QuickQuestionsController < Admin::BaseController
 	def new
 
 	@user = User.find(params[:user_id])
-	@message = QuickQuestion.find(24)
-	@quick_question = QuickQuestion.new
+	@quick_question = QuickQuestion.find(params[:message_id])
+	@message = Message.new
 
 	end
 
-
-	def create
-		@user = User.find(params[:user_id])
-		@message = @user.quick_questions.create(params[:quick_question])
-			if @message.save
-				redirect_to root_url, notice: 'You have replied to the message!'
-			else
-				redirect_to rot_url, alert: 'The message could not be sent, try again!'
-		end
-
-	end
 
 
 	def destroy
