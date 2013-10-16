@@ -5,7 +5,7 @@ before_filter :authenticate_user!
 
   def dashboard
     @usersites = current_user.usersites.find(:all)
-    @quick_question = QuickQuestion.new
+    @quick_question = QuickQuestion.new 
     
   end
 

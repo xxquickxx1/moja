@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+before_filter :create_contact
+
+  def create_contact
+  @contact = Contact.new
+end
 
 def validate_admin
   redirect_to root_url and return unless user_signed_in? && current_user.try(:admin?)

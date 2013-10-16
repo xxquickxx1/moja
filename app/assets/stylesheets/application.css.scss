@@ -34,6 +34,18 @@ body{
 	}
 }
 
+@font-face {
+    font-family: Nevis;
+    src: url('/fonts/nevis.ttf');
+    font-weight:400;
+}
+
+.Forque{
+	font-family: Nevis;
+	letter-spacing:10px;
+}
+
+
 .uppercase{
 	text-transform: uppercase;
 }
@@ -432,3 +444,104 @@ a:link, a:visited{
 }
 	
 } 
+
+
+.hero-unit {
+	
+	h1{
+	color: rgba(255,255,255,0.2);
+	}
+
+	h1.Forque{
+	color:rgba(255,255,255,0.2);
+	font-size:2.9em;
+	transition: text-shadow 3s ease;
+	text-shadow:0px 0px 100px white;
+	-webkit-transition: text-shadow 3s ease;
+    -moz-transition: text-shadow 3s ease;
+    -o-transition: text-shadow 3s ease;
+	}
+
+	h1.addEffect{
+	text-shadow: 0px 0px 2px white;
+	}
+
+	h2.heroh2{
+	margin-top:-6px;
+	padding-left:20px;
+	text-shadow: 0px 0px 2px #5bb75b;
+	font-size:1.4em;
+	}
+
+	p{
+	font-family: nevis;
+	}
+}
+
+.login-form{
+	width:400px;
+	border:solid 10px rgb(237,237,237);
+	margin:0 auto;
+	background-color:rgb(247,247,247);
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-o-border-radius:7px;
+	margin-bottom:20px;
+
+	form input{
+	width:385px;
+	height:30px;
+	}
+
+	form input[type="checkbox"]{
+	height:16px;
+	width:16px;
+	}
+
+	form input[type="submit"]{
+	height:50px;
+	font-size:1.3em;
+	margin-left:7px;
+	}
+
+	h2{
+
+	}
+}
+
+.modalLeftCol{
+	form input{
+	width: 260px;
+	height:40px;
+	}
+
+	textarea{
+	width:260px;
+	}
+}
+
+.home-flash{
+	margin-top:27px;
+	float:left;
+	.alert{
+	background-color: rgba(0,0,0,0.4);
+	border:none;
+	}
+
+	.alert-success{
+	color:white;
+	font-weight:bold;
+	font-family:helvetica;
+  	border:none;
+
+	}
+
+	.alert-error{
+	color: #b94a48;
+	font-weight:bold;
+	font-family:helvetica;
+  	border:none;
+  	text-shadow:none;
+	}
+}

@@ -1,4 +1,5 @@
 class TestimonialsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new]
   def testimonial
     @breadcrumb = "Testimonials"
     @testimonials = Testimonial.find(:all)

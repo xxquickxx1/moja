@@ -10,6 +10,10 @@
     $(".fancybox").fancybox();
   });
 
+  $(document).ready(function() {
+    $(".Forque").addClass("addEffect");
+  });
+
 
 
 $('a').hover(function(){ $(this).tooltip('toggle')})

@@ -1,10 +1,10 @@
 class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
-  before_filter :validate_admin, :only => [:new, :edit]
+  before_filter :validate_admin, :except => [:blog, :show]
   
   def blog
-    @breadcrumb = "Blog"
+    @breadcrumb = "Posts"
     @blogs = Blog.all
 
     respond_to do |format|
@@ -16,8 +16,10 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+
     @breadcrumb = "Blog Post"
     @blog = Blog.find(params[:id])
+    @pageTitle = @blog.title + " | " + "Web Design Stories"
 
     respond_to do |format|
       format.html # show.html.erb

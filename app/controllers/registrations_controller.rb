@@ -8,7 +8,6 @@ def create
       resource.transaction do
         resource.save!
       end
-    UserMailer.post_email.deliver
     flash[:notice] = "Successfully registered"
     sign_in(resource)
     respond_with resource, :location => after_sign_up_path_for(resource)

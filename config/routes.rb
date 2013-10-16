@@ -1,4 +1,11 @@
 Webdesignstories::Application.routes.draw do
+  
+  resources :contacts
+
+  #terms and privacy routes
+  get "privacy/privacy", to: 'privacy#privacy', as: :privacy
+  get "terms/terms", to: 'terms#terms', as: :terms
+  #terms and privacy routes
 
   namespace :admin do
     get '/websites/', to: 'websites#home', as: :websites

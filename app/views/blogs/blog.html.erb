@@ -4,16 +4,16 @@
 
 <div class="span12 white padding-20">
 <%= render 'layouts/breadcrumb' %>
-<h3>Welcome to our website</h3>
 
 <% @blogs.each do |blog| %>
+<hr />
   <span class="pull-right blue">Posted: <%= time_ago_in_words(blog.created_at) %> ago</span>
-    <h4><%= blog.title %></h4>
-    <i><%= blog.category %></i>
-    <p><%= blog.description %></p>
+    <h4><%= link_to blog.title, "/blogs/#{blog.id}" %></h4>
+    <p class="muted">Category: <%= blog.category %></p>
+    <p><%= truncate blog.description, length: 200 %></p>
 
     <%= link_to 'Read', :controller => 'blogs', :action => 'show', :id => blog %>
-
+<hr />
   
 <% end %>
 

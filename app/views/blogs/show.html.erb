@@ -1,20 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
+<div class="home-container">
+<div class="row-fluid rounded-box white padding-20">
+<div class="span12">
+<h4>
   <%= @blog.title %>
-</p>
+</h4>
+<hr />
 
 <p>
-  <b>Category:</b>
-  <%= @blog.category %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @blog.description %>
 </p>
+<%= link_to 'Back', blog_path %>
 
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+</div>
+</div>
+</div>

@@ -48,9 +48,7 @@
       
       </li>
       <li><%= link_to 'SEO', seo_path %></li>
-       <li>
-        <%= link_to 'For Sale', sales_path %>
-    </li>
+      
     <li><%= link_to 'Portfolio', portfolios_path %></li>
     <li><%= link_to 'Blog', blog_path %></li>
 
@@ -103,6 +101,9 @@
 
 
 <!-- Contact Modal -->
+
+
+<!-- Contact Modal -->
 <div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -112,33 +113,40 @@
   <div class="modal-body">
 <!-- Modal Body -->
 <div class="modalLeftCol">
-    <form>
+<%= simple_form_for @contact do |contact| %>
   <fieldset>
-    <input type="text" placeholder="Your name.." style="width:260px; height:40px;"><br />
-    <input type="text" placeholder="Email address.." style="width:260px; height:40px;"><br />
-    <input type="text" placeholder="Phone number.." style="width:260px; height:40px;"><br />
-    <textarea style="width:260px; height: 140px;" placeholder="Your message.."></textarea><br />
+  <p class="blue">*All fields are required</p>
+  <%= contact.input :name, placeholder: 'Your full name', label: false %>
+  <%= contact.input :email, placeholder: 'Email address', label: false %>
+  <%= contact.input :phone_number, placeholder: 'Phone number', label: false %>
+  <%= contact.input :message,label: false, placeholder: 'Your message goes here', :input_html => {rows: 10} %>
   </fieldset>
-</form>
+
 </div>
 <div class="modalRightCol">
 <img src="/images/logo1.png" style="float:left;" hspace="20px">
 <h4 class="green">Send us a message or simply use one of the options below.</h4>
 <br />
-<h5 class="muted">E: thomas.webdesign@yahoo.com</h5>
-<h5 class="muted">Tel: (+44) 7719731397</h5>
+<h5 class="muted" style="margin-left:20px;">E: thomas.webdesign@yahoo.com</h5>
+<h5 class="muted" style="margin-left:20px;">Tel: (+44) 7719731397</h5>
 <hr />
-<h5 class="green">Have you seen our <%= link_to 'websites for sale', sales_path %>?</h5>
+
 </div>
 
 <!-- Modal Body -->
   </div>
   <div class="modal-footer">
+<div class="pull-left">
     <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-success">Send Message</button>
+    </div>
+     <div class="pull-right">
+    <%= button_to 'Send Message',nil, class: 'btn btn-success', controller: 'contacts', action: 'create' %>
+</div>
+    <% end %>
   </div>
 </div>
 <!-- Contact Modal -->
+
     <%= javascript_include_tag "bootstrap", "main" %>
   </body>
 </html>

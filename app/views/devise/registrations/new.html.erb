@@ -1,11 +1,21 @@
-<h2>Sign up</h2>
+<div class="home-container">
+<div class="row-fluid padding-20 rounded-box white">
+<div class="span12">
+
+<div class="login-form padding-20">
+<h2>Register</h2>
+<p class="muted">Your details are 100% secure, we don't sell emails!</p>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+  <%= f.input :name, :autofocus => true, placeholder: 'Your real name or business name', label: false %>
+  <%= f.input :email, :required => true, placeholder: 'Your email address', label: false %>
+  <%= f.input :password, :required => true, placeholder: 'Your password', label: false %>
+  <%= f.input :password_confirmation, :required => true, placeholder: 'Confirm password', label: false %>
+  <hr />
+  <%= f.button :submit, 'Register', :class => 'btn-primary' %>
 <% end %>
+<hr />
 <%= render "devise/shared/links" %>
+</div>
+</div></div></div>

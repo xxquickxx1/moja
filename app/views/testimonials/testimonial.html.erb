@@ -3,7 +3,9 @@
 
 <div class="span12 white padding-20">
 <%= render 'layouts/breadcrumb' %>
+<% if user_signed_in? %>
 <span class="pull-right"><%= link_to 'New Testimonial', new_testimonial_path, class: 'button-link-green' %></span>
+<% end %>
 <%= @empty if @empty %>
 
 <% @testimonials.each do |t| %>

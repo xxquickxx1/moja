@@ -1,8 +1,7 @@
-class UserMailer < Devise::Mailer
-  default from: "wdstories@example.com"
-
-  def self.mailer_name
-    "devise/mailer"
+class UserMailer < ActionMailer::Base
+  default from: 'notifications@example.com'
+ 
+  def welcome_email
+    mail(to: "thomas.webdesign@yahoo.com", subject: 'Welcome to My Awesome Site')
   end
-
 end

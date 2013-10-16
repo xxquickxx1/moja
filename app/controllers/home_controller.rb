@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def whoweare
-    @breadcrumb = "Who we are"
+    @breadcrumb = "Who We Are"
     render 'about/who-we-are'
 
   end
