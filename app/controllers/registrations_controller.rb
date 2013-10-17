@@ -7,6 +7,7 @@ def create
     begin
       resource.transaction do
         resource.save!
+        UserMailer.welcome_email.deliver!
       end
     flash[:notice] = "Successfully registered"
     sign_in(resource)

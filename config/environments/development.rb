@@ -15,12 +15,13 @@ Webdesignstories::Application.configure do
 
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'webdesignstories.com' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_options = {from: 'info@webdesignstories.com'}
 
 
   # Print deprecation notices to the Rails logger
@@ -43,13 +44,13 @@ Webdesignstories::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.smtp_settings = {
-    address: "smtp://127.0.0.1:1025",
-    port: 1025,
-    domain: "localhost:3000",
+    address: "oxmail.registrar-servers.com",
+    port: 465,
+    domain: "www.webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
   }
 
 
