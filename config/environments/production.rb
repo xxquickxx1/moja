@@ -62,13 +62,13 @@ Webdesignstories::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address: "oxmail.registrar-servers.com",
-    port: 465,
+    address: "smtp.gmail.com",
+    port: 587,
     domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["MAIL_USERNAME"],
-    password: ENV["MAIL_PASSWORD"]
+    user_name: "xxquickxx1@gmail.com",
+    password: "mojasunia20"
   }
 
 
