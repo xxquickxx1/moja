@@ -64,7 +64,7 @@ Webdesignstories::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "oxmail.registrar-servers.com",
     port: 465,
-    domain: "www.webdesignstories.com",
+    domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["MAIL_USERNAME"],
@@ -72,7 +72,7 @@ Webdesignstories::Application.configure do
   }
 
 
-  config.action_mailer.default_url_options = { :host => '127.0.0.1' }
+  config.action_mailer.default_url_options = { :host => 'webdesignstories.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
