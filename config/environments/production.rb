@@ -72,7 +72,10 @@ Webdesignstories::Application.configure do
   }
 
 
-  config.action_mailer.default_url_options = { :host => 'webdesignstories.com' }
+  config.action_mailer.default_url_options = {
+  :host => '127.0.0.1',
+  :port => 5432
+   }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
