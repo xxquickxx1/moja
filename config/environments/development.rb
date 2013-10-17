@@ -43,13 +43,13 @@ Webdesignstories::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.smtp_settings = {
-    address: "smtp://127.0.0.1:1025",
-    port: 1025,
-    domain: "localhost:3000",
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: "xxquickxx1@gmail.com",
+    password: "mojasunia20"
   }
 
 

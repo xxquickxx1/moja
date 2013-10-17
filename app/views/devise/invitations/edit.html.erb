@@ -1,11 +1,23 @@
+<div class="home-container">
+<div class="row-fluid padding-20 rounded-box white">
+<div class="span12">
 <h2><%= t 'devise.invitations.edit.header' %></h2>
 
+<div class="login-form padding-20">
+<h2>Accept Invitation</h2>
+<p class="muted">Your details are 100% secure, we don't sell emails!</p>
 <%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :invitation_token %>
-
+  <%= f.input :name %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
 
-  <%= f.submit t("devise.invitations.edit.submit_button") %>
+  <%= f.submit t("devise.invitations.edit.submit_button"), class: 'btn btn-success', html_input: 'hello' %>
 <% end %>
+<hr />
+</div>
+
+
+</div></div></div>
+

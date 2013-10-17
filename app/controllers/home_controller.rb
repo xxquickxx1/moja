@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @pageTitle = "In House Design - Web Development & Design "
     @portfolio = Portfolio.order("created_at DESC").limit(3)
     
+    
   end
 
   def about

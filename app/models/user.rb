@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
   has_many :usersites
   has_many :quick_questions
   has_many :invitations, :class_name => self.to_s, :as => :invited_by
-  validates_presence_of :name
+  validates_presence_of :name, :message => "Name can't be blank"
   
 end

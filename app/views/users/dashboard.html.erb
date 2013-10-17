@@ -33,7 +33,7 @@
 <h1 style="margin-top:-20px;"><small>My Account</small></h1>
 <ul class="unstyled">
 
-<li class="disabled">Refer Friend</li>
+<li><%= link_to 'Refer Friend', new_user_invitation_path %></li>
 <li><%= link_to 'Edit My Details', edit_user_registration_path %></li>
 <li><%= link_to 'Sign Out', destroy_user_session_path %>
 
