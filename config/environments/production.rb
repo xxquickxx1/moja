@@ -62,17 +62,17 @@ Webdesignstories::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "localhost.localdomain",
+    address: "oxmail.registrar-servers.com",
+    port: 465,
+    domain: "www.webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
   }
 
 
-  config.action_mailer.default_url_options = { :host => 'xxquickxx1@gmail.com' }
+  config.action_mailer.default_url_options = { :host => 'webdesignstories.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
