@@ -81,7 +81,7 @@ class Users::InvitationsController < Devise::InvitationsController
   end
 
   def invite_params
-    devise_parameter_sanitizer.sanitize(:invite)
+    devise_parameter_sanitizer.(:invite)
   end
 
   def update_resource_params

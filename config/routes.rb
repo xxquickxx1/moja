@@ -60,7 +60,7 @@ get '/about', :to => 'home#whoweare', as: :about
   authenticated :user do
     root :to => 'users#dashboard'
   end
-devise_for :users, :controllers => {:registrations => "registrations", :invitations => "users/invitations"} do
+devise_for :users, :controllers => {:registrations => "registrations"} do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
 
