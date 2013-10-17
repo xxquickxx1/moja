@@ -72,7 +72,7 @@ Webdesignstories::Application.configure do
   }
 
 
-  config.action_mailer.default_url_options = { :host => 'webdesignstories.com' }
+  config.action_mailer.default_url_options = { :host => 'oxmail.registrar-servers.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
