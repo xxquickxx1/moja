@@ -18,6 +18,7 @@ gem 'pony'
 gem 'stripe'
 gem 'devise_invitable', '~> 1.1.0'
 gem 'rails_12factor'
+gem 'meta-tags', :require => 'meta_tags'
 group :assets do
   gem 'therubyracer', :platform=>:ruby
 end

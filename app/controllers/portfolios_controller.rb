@@ -1,7 +1,10 @@
 class PortfoliosController < ApplicationController
   before_filter :validate_admin, :only => [:new, :edit]
   def portfolio
-    @pageTitle = "Website Design & Development By Web Design Stories"
+     @page_description = "Website Design and Development for small companies, stand out from the crowd and make your way to the top!"
+   @page_title = "Website Design & Development By Web Design Stories"
+   @page_keywords    = 'Web Design, Website Development, Cheap SEO, Web Designer, Cheap Website,business, Get more customers'
+   
     @breadcrumb = "Portfolio Items"
     @portfolio = Portfolio.order("created_at DESC").all
 
@@ -11,7 +14,7 @@ class PortfoliosController < ApplicationController
   def show
   	@portfolio = Portfolio.find(params[:id])
     @breadcrumb = @portfolio.name
-    @pageTitle = "Web Design For" + " " + @portfolio.category + " " + @portfolio.name
+       @page_title = "Web Design For" + " " + @portfolio.category + " " + @portfolio.name
   end
  
  def new

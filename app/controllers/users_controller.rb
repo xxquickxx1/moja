@@ -4,17 +4,23 @@ before_filter :authenticate_user!
   
 
   def dashboard
+    set_meta_tags :nofollow => true
+
     @usersites = current_user.usersites.find(:all)
     @quick_question = QuickQuestion.new 
     
   end
 
   def addwebsite
+    set_meta_tags :nofollow => true
+
     @usersite = current_user.usersites.new
    render 'users/add-website'
   end
 
   def createaddwebsite
+    set_meta_tags :nofollow => true
+
     @usersite = current_user.usersites.create(params[:usersite])
     if @usersite.save
         redirect_to dashboard_path, :notice => 'Your website has been added. Thank you!'
@@ -24,15 +30,21 @@ before_filter :authenticate_user!
   end
 
   def inbox
+    set_meta_tags :nofollow => true
+
     @messages = current_user.messages(:all)
 
   end
 
   def showmessage
+    set_meta_tags :nofollow => true
+
     @message = Message.find(params[:id])
   end
 
   def deletemessage
+    set_meta_tags :nofollow => true
+
     @message = Message.find(params[:id])  
     if @message.destroy
         redirect_to inbox_path, :notice => 'Your message has been discarded'

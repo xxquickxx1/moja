@@ -4,7 +4,9 @@ class BlogsController < ApplicationController
   before_filter :validate_admin, :except => [:blog, :show]
   
   def blog
-    @pageTitle = "Blog | Web Design Stories"
+    @page_description = "Explore different topics in business, marketing, seo, branding, web development and more!"
+   @page_title = "Blog | Web Design Stories"
+   @page_keywords    = 'Web Design, Website Development, Cheap SEO, Web Designer, Cheap Website,business, Get more customers'
     @breadcrumb = "Posts"
     @blogs = Blog.all
 
@@ -20,7 +22,8 @@ class BlogsController < ApplicationController
 
     @breadcrumb = "Blog Post"
     @blog = Blog.find(params[:id])
-    @pageTitle = @blog.title + " | " + "Web Design Stories"
+   @page_title = @blog.title + " | " + "Web Design Stories"
+  @page_keywords    = 'Web Design, Website Development' + @blog.title + ", " + @blog.category + " " + "Website"
 
     respond_to do |format|
       format.html # show.html.erb
