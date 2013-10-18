@@ -1,6 +1,7 @@
 class TestimonialsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new]
+  before_filter :authenticate_user!, only: [:new, :create]
   def testimonial
+    @pageTitle = "Testimonials | Web Design Stories"
     @breadcrumb = "Testimonials"
     @testimonials = Testimonial.find(:all)
     @empty = "Sorry there's no testimonials yet" if @testimonials.size == 0

@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
 
+before_filter :validate_admin
+
 def new
 	@breadcrumb = "Checkout"
 	@sale = Sale.find(params[:website_id])

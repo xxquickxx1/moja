@@ -1,5 +1,7 @@
 class UsersitesController < ApplicationController
 
+before_filter :authenticate_user!
+
 def create
 @usersite = Usersite.create(params[:usersite])
 if @usersite.save

@@ -7,11 +7,13 @@ class WebsitesController < ApplicationController
   # GET /websites/1.json
 
 def responsive
+  @pageTitle = "Responsive Website Design | Web Design Stories"
 @breadcrumb = "Responsive Design"
 render 'websites/responsive-design'
 end
 
 def existingwebsite
+  @pageTitle = "Website Updates & Management | Web Design Stories"
   @breadcrumb = "Existing Website"
   render 'websites/existing-website'
 end
@@ -19,6 +21,7 @@ end
   # GET /websites/new
   # GET /websites/new.json
   def new
+    @pageTitle = "Web Design & Development Price Calculator"
     @breadcrumb = "New Website"
     @website = Website.new
 

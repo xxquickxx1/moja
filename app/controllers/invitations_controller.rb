@@ -12,6 +12,7 @@ class Users::InvitationsController < Devise::InvitationsController
 
   # GET /resource/invitation/new
   def new
+    @pageTitle = "Invite Friend | Web Design Stories"
     self.resource = resource_class.new
     render :new
   end

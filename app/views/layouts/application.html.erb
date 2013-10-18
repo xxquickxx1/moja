@@ -56,7 +56,25 @@
     <li class="pull-right helpbuttons">
     <a href="#contactModal" data-toggle="modal" class=" btn btn-success margin-top-10">Contact</a></li>
    <% if user_signed_in? %>
-        <li class="pull-right"><%= link_to 'My Account', dashboard_path %></li>
+
+      
+<li class="drop pull-right">
+         <%= link_to 'My Account', dashboard_path %>
+        
+        <div class="dropdownContain">
+          <div class="dropOut">
+            <div class="triangle"></div>
+            <ul>
+            <li><%= link_to 'Edit My Details', edit_user_registration_path %></li>
+              <li class="pull-right"><%= link_to 'Sign Out', destroy_user_session_path %></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+
+
+
     <% else %>
         <li class="pull-right "><%= link_to 'Sign Up', new_user_registration_path %></li>
         <li class="pull-right "><%= link_to 'Log In', new_user_session_path %></li>

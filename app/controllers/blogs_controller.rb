@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
   before_filter :validate_admin, :except => [:blog, :show]
   
   def blog
+    @pageTitle = "Blog | Web Design Stories"
     @breadcrumb = "Posts"
     @blogs = Blog.all
 
