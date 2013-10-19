@@ -64,6 +64,7 @@ devise_for :users, :controllers => {:registrations => "registrations"} do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
 
+match 'users/deleteaddwebsite', to: 'users#deleteaddwebsite'
 match 'users/createaddwebsite', to: 'users#createaddwebsite', as: :createaddwebsite
 get 'users/add-website', to: 'users#addwebsite', as: :addwebsite
 resources :usersites

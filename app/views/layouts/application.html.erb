@@ -5,7 +5,7 @@
   <%= display_meta_tags %>
 <meta name="google-site-verification" content="JJc5kwOw6t9jvDU3dsFuU9uoiMjd4Jop7-f_i5B2uaw" />
     <%= stylesheet_link_tag "application", "bootstrap", "home", "fancybox", "fancybox-buttons", "animate", :media => "all" %>
-    <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons" %>
+    <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons", :defaults %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>

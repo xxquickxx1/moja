@@ -20,7 +20,9 @@
 <% end %>
 <% @usersites.each do |site| %>
 
-<p>www.<%= site.website_link %></p>
+<span class="pull-left">www.<%= site.website_link %></span><span class="pull-right"><%= button_to 'Remove',nil, :confirm => 'Are you sure?', class: 'btn btn-small btn-danger', :controller => :users, action: 'deleteaddwebsite', website_id: site.id %></span>
+<br />
+<hr />
 
 <% end %>
 

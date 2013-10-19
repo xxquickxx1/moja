@@ -29,6 +29,15 @@ before_filter :authenticate_user!
     end
   end
 
+  def deleteaddwebsite
+    @website = Usersite.find(params[:website_id])
+     if @website.destroy
+        redirect_to :back, notice: 'Your website has been removed.'
+      else
+          redirect_to :back, alert: 'Could not remove website from the list.'
+        end
+  end
+
   def inbox
     set_meta_tags :nofollow => true
 
