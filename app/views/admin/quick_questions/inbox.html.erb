@@ -16,8 +16,7 @@
 <br />
  <%= truncate question.description.capitalize, length: 100 %><br />
 
-
-<span class="pull-right"><%= link_to 'Read', admin_quick_question_path(question) %> | Delete</span>
+<span class="pull-right"><%= link_to 'Read', admin_quick_question_path(question) %> | <%= link_to 'Remove',{:controller => :quick_questions, action: 'destroy', message: question.id}%></span>
 
  </div>
 

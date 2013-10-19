@@ -10,9 +10,12 @@ set_meta_tags :nofollow => true
 
   end
 
+  def show
+  	@message = Contact.find(params[:id])
+  end
+
   def index
   	set_meta_tags :nofollow => true
-
 
   end
 
@@ -24,6 +27,15 @@ set_meta_tags :nofollow => true
 	@quick_question = QuickQuestion.find(params[:message_id])
 	@message = @user.messages.new
 
+	end
+
+	def destroy
+		@message = Contact.find(params[:contact_id])
+			if @message.destroy
+				redirect_to :back, notice: 'Message has been deleted.'
+			else
+					redirect_to :back, alert: 'Could not delete message.'
+			end
 	end
 
 
@@ -38,5 +50,6 @@ set_meta_tags :nofollow => true
 		end
 
 	end
+
 
 end

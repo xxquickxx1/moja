@@ -28,7 +28,12 @@ set_meta_tags :nofollow => true
 
 
 	def destroy
-
+		@question = QuickQuestion.find(params[:message])
+			if @question.destroy
+				redirect_to :back, notice: 'Message deleted!'
+			else
+				redirect_to :back, alert: 'Could not delete message.'
+		end
 
 	end
 

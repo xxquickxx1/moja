@@ -8,10 +8,12 @@ Webdesignstories::Application.routes.draw do
   #terms and privacy routes
 
   namespace :admin do
+    match 'admin/messages/destroy', to: 'messages#destroy'
     get '/websites/', to: 'websites#home', as: :websites
     resources :websites
     resources :messages
     root :to => "base#dashboard", as: :root
+    match '/inbox/destroy', to: 'quick_questions#destroy'
     get '/users/', to: 'users#home', as: :users
     get '/inbox', to: 'quick_questions#inbox', as: :inbox
     resources :quick_questions
