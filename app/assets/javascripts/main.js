@@ -5,6 +5,14 @@
    });
 });
   })
+  $(document).ready(function(){
+  	$(function() {
+   $('.freebies').delay(2800).fadeIn('normal', function() {
+      $(this).delay(3200).fadeOut();
+   });
+});
+  })
+
 
   $(document).ready(function() {
     $(".fancybox").fancybox();

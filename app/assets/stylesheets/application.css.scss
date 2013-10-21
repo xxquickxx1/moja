@@ -562,3 +562,12 @@ a:link, a:visited{
 	background-color:#d9edf7;
 	}
 }
+
+.freebies{
+	position:relative;
+	span{
+	position:absolute;
+	top:-13px;
+	padding:2px
+	}
+}
