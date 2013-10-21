@@ -545,3 +545,20 @@ a:link, a:visited{
   	text-shadow:none;
 	}
 }
+
+.boldedTable{
+	font-weight:bold;
+	td:nth-child(n+2){
+	color:#5bb75b;
+	}
+}
+
+.colorTable{
+	th{
+	background-color:#d9edf7;
+	}
+
+	.colorTab td:first-child{
+	background-color:#d9edf7;
+	}
+}

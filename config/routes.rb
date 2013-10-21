@@ -1,5 +1,7 @@
 Webdesignstories::Application.routes.draw do
   
+  get "/pricing", to: 'pricing#home', as: :pricing
+
   resources :contacts
 
   #terms and privacy routes
