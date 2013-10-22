@@ -77,7 +77,9 @@
         <div class="dropdownContain">
           <div class="dropOut">
             <div class="triangle"></div>
-            <ul>
+            <ul><% if current_user.admin? %>
+            <li><%= link_to 'Admin', admin_root_path %></li>
+            <% end %>
             <li><%= link_to 'Edit My Details', edit_user_registration_path %></li>
               <li class="pull-right"><%= link_to 'Sign Out', destroy_user_session_path %></li>
             </ul>

@@ -8,6 +8,10 @@ before_filter :authenticate_user!
 
     @usersites = current_user.usersites.find(:all)
     @quick_question = QuickQuestion.new 
+
+    @invitation = current_user.invitations
+@invitationsCount = @invitation.where("invitation_accepted_at IS NOT NULL").count
+@invitationsPoints = @invitationsCount * 50
     
   end
 

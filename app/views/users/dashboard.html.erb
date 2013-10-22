@@ -47,7 +47,15 @@
 </div>
 <div class="span6">
 	<hr />
-	<h5>Promotions and discounts will appear here</h5>
+
+<div class="invited">
+<progress id="progressbar" value="<%= @invitationsCount %>" max="10">
+</progress> <span class="invitedCount pull-right"><%= @invitationsCount %>/5</span> 
+<br />
+ <p class="muted">Number of people who accepted your invitation.</p>
+ <span class="pull-right">You have <%= @invitationsPoints %> points.</span>
+ <br />
+</div>
 
 	<hr />
 	<h5>Quick Tips</h5>
