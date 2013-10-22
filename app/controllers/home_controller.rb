@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   # Pages controller
   def index
-@page_title       = 'Web Development & Design For Small Companies'
+@page_title       = 'Web Development & Design For Small Companies | Web Design Stories'
 @page_description = 'Web Design Stories specialize in Web Development & Design, Branding and Marketing for small companies. Get more clients and expand your business with us'
 @page_keywords    = 'Web Design, Web Development, SEO, Branding, Small Company, Website for small company, Grow your small business, small business'
     @pageTitle = ""
@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def about
     @page_description = "Grow your business with Web Design Stories. Get more customers, build your brand, stand out from the crowd and win your place in the market!"
-   @page_title = "Website Design For Small Companies - Grow Your Business"
+   @page_title = "Website Design For Small Companies - Grow Your Business | Web Design Stories"
    @page_keywords    = 'Web Design, Website Development, SEO for small companies, Low budget website'
     @breadcrumb = "About"
     @testimonials = Testimonial.order("created_at DESC").limit(7)
