@@ -1,17 +1,140 @@
+<script>
+
+  function populateSelect( select, data ) {
+    for( key in data ) {
+      $( select ).append('<option value="' + data[ key ]  + '">' + key+ '</option>');
+    };
+  };
+
+  // These are the default options:
+
+  defaultNumberOfPages = [ 1, 3 ];
+  contentFixedPrice = 20;
+
+  // Selects
+
+  design = { 'Based on a template': 9.0,
+             'From scratch unique to my business': 15.0, 
+             'Professional design': 20.0 };
+
+  logo = { 'I have my own logo': 0.0,
+              'Design simple logo for me': 35.0,
+              'Design professional logo for me': 100.0  };
+
+  pages = { '1-3 Pages': [1, 3],
+            '4-7 Pages': [4, 7],
+            '8-12 Pages': [8, 12],
+            '13+ Pages': [13] };
+
+  images = { 'I will supply images': 0.0,
+             'Supply free stock images for my website': 10.0,
+             'Supply professional images unique to my business': 20.0 };
+
+  content = { 'I will supply content': 5.0,
+              'Write professional content for me': 0.0 };
+
+  // Checkboxes
+
+  all_features = {
+               'Credit Card Payments': 150.0,
+               'Blog': 100.0,
+               'Forum': 250.0,
+               'Newsletter': 90.0,
+               'Gallery/Portfolio': 50.0,
+               'Review/Testimonial': 40.0,
+               'Facebook': 10.0,
+               'Twitter': 10.0,
+               'Google+': 10.0,
+               'Pinterest': 10.0,
+               'Social sharing button': 15.0,
+               'Image slider': 20.0,
+               'Dropdown menu': 30.0,
+               'Hover link/button/box effects': 5.0,
+               'Video': 10.0,
+               'Interactive map': 10.0
+  };
+  
+
+  $( document ).ready( function() {
+
+    selects = [ 'design', 'logo', 'pages', 'images', 'content' ];
+
+    for( index in selects ) {
+      populateSelect( '#website_' + selects[index] , eval(selects[index]) )
+    };
+
+    function computePrices() {
+
+      window.totalPrice = [0.0, 0.0];
+
+      totalPrice[0] = parseInt( $('#website_design').val() ) * numberOfPages[0];
+      totalPrice[0] += parseInt( $('#website_logo').val() );
+      totalPrice[0] += numberOfPages[0] * contentFixedPrice;
+      totalPrice[0] += parseInt( $('#website_images').val() ) * numberOfPages[0];
+      totalPrice[0] += parseInt( $('#website_content').val() ) * numberOfPages[0];
+
+      totalPrice[1] = parseInt( $('#website_design').val() ) * numberOfPages[1];
+      totalPrice[1] += parseInt( $('#website_logo').val() );
+      totalPrice[1] += numberOfPages[1] * contentFixedPrice;
+      totalPrice[1] += parseInt( $('#website_images').val() ) * numberOfPages[1];
+      totalPrice[1] += parseInt( $('#website_content').val() ) * numberOfPages[1];
+
+      $('input[type=checkbox]:checked').each( function( index, element ) {
+
+        var price = all_features[ $(element).val() ];
+
+        if( typeof(price) != 'undefined' ) {
+          console.log( $(element).attr('class') );
+          if( $(element).val() == 'Hover link/button/box effects' ) {
+            totalPrice[0] += price * numberOfPages[0];
+            totalPrice[1] += price * numberOfPages[1];
+          } else {
+            totalPrice[0] += price;
+            totalPrice[1] += price;
+          };
+        };
+
+      });
+
+      if( totalPrice[1] ) {
+        $('#price').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
+      } else {
+        $('#price').text( "< £" + totalPrice[0] );
+
+      };
+
+    };
+
+    $('input').on( 'change', function( e ) {
+      window.numberOfPages = JSON.parse( "[" + $('#website_pages').val() + "]" );
+      computePrices();
+    });
+
+    $('select').on( 'change', function( e ) {
+      window.numberOfPages = JSON.parse( "[" + $('#website_pages').val() + "]" );
+      computePrices();
+    });
+
+    window.numberOfPages = defaultNumberOfPages;
+    computePrices();
+  });
+
+</script>
+
 <%= simple_form_for(@website) do |f| %>
   <%= f.error_notification %>
 
 <label><h1><small>Design</small></h1>
 </label>
-    <%= f.input :design, :collection => ['Based on a template', 'From scratch unique to my business', 'Professional design'], :selected => [0], label: false %>
+    <%= f.input :design, :collection => [], :selected => [0], label: false %>
 
-    <%= f.input :logo, :collection => ['I have my own logo', 'Design simple logo for me', 'Design professional logo for me'], :selected => [0], label: false %>
+    <%= f.input :logo, :collection => [], :selected => [0], label: false %>
 <hr />
 <label><h1><small>Content</small></h1>
 </label>
-    <%= f.input :pages, :collection => ['1-3 Pages', '4-7 Pages', '8-12 Pages', '13+ Pages'], :selected => [0], label: false %>
-    <%= f.input :images, :collection => ['I will supply images', 'Supply free stock images for my website', 'Supply professional images unique to my business'], :selected => [0], label: false %>
-    <%= f.input :content, :collection => ['I will supply content', 'Write professional content for me'], :selected => [0], label: false %>
+    <%= f.input :pages, :collection => [], :selected => [0], label: false %>
+    <%= f.input :images, :collection => [], :selected => [0], label: false %>
+    <%= f.input :content, :collection => [], :selected => [0], label: false %>
 <hr />
 <label><h1><small>Features</small></h1>
 </label>
@@ -28,7 +151,7 @@
      <label><h1><small>Effects</small></h1>
 </label>
 
-     <%= f.input :effects, as: :check_boxes, collection: [['Image slider', 'Image slider'], ['Dropdown menu', 'Dropdown menu'], ['Hover link/button/box effects', 'Hover link/button/box effects'], ['Video', 'Video'], ['Interactive map', 'Intractive map']], label: false %>
+     <%= f.input :effects, as: :check_boxes, collection: [['Image slider', 'Image slider'], ['Dropdown menu', 'Dropdown menu'], ['Hover link/button/box effects', 'Hover link/button/box effects'], ['Video', 'Video'], ['Interactive map', 'Interactive map']], label: false %>
 
 <i><p class="muted">More effects available on request</p></i>
  <%= f.input :email, label: 'Please enter your email', :required => true %>
