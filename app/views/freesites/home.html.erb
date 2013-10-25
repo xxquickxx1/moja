@@ -1,0 +1,25 @@
+<div class="home-container">
+<div class="row-fluid padding-20 rounded-box white">
+<div class="span12">
+<%= render 'layouts/breadcrumb' %>
+
+<% if current_user.admin? %>
+<div class="pull-right">
+<%= link_to 'New Freebie', new_freeby_freesite_path, class: 'button-link-green' %>
+<hr />
+</div>
+
+<% end %>
+
+<% @freebies.each do |freebie| %>
+	<div class="row-fluid">
+	<div class="span12 well">
+	<%= freebie.name %>
+	<p><%= simple_format freebie.description %></p>
+	</div>
+	</div>
+<% end %>
+
+</div>
+</div>
+</div>

@@ -1,5 +1,12 @@
 Webdesignstories::Application.routes.draw do
-  
+    
+
+  get '/freebies', to: 'freebies#home', as: :freebie
+  resources :freebies do
+      get '/freesites', to: 'freesites#home', as: :freesite
+    resources :freesites
+  end
+
   get "/pricing", to: 'pricing#home', as: :pricing
 
   resources :contacts
