@@ -101,22 +101,6 @@ ActiveRecord::Schema.define(:version => 20131016220143) do
     t.string   "category_fit"
   end
 
-  create_table "shopping_cart_items", :force => true do |t|
-    t.integer  "owner_id"
-    t.string   "owner_type"
-    t.integer  "quantity"
-    t.integer  "item_id"
-    t.string   "item_type"
-    t.float    "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "shopping_carts", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40
     t.string   "value",      :limit => 6
