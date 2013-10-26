@@ -57,6 +57,56 @@
 
   $( document ).ready( function() {
 
+    $( '.submit-btn button' ).on( 'click', function( e ) {
+
+      // populate the modal when the button gets clicked
+      $('#modal-design').html( $('#website_design option:selected').text() + '<br />' + $('#website_logo option:selected').text() );
+      $('#modal-content').html( $('#website_pages option:selected').text() + '<br />' + $('#website_images option:selected').text() + '<br />' + $('#website_content option:selected').text() );
+
+      var checkedFeatures = $('.website_features  input:checked');
+      if( checkedFeatures.length == 0 ) {
+        $('#modal-features-container').hide();
+      } else {
+        $('#modal-features-container').show();
+        checkedFeatures.each( function( index, element ) {
+          total = checkedFeatures.length-1;
+          $('#modal-features').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-features').append( ', ' );
+          };
+        });
+      };
+
+      var checkedSocialMedia = $('.website_socialmedia input:checked');
+      if( checkedSocialMedia.length == 0 ) {
+        $('#modal-social-media-container').hide();
+      } else {
+        $('#modal-social-media-container').show();
+        checkedSocialMedia.each( function( index, element ) {
+          total = checkedSocialMedia.length-1;
+          $('#modal-social-media').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-social-media').append( ', ' );
+          };
+        });
+      };
+
+      var checkedEffects = $('.website_effects input:checked');
+      if( checkedEffects.length == 0 ) {
+        $('#modal-effects-container').hide();
+      } else {
+        $('#modal-effects-container').show();
+        checkedEffects.each( function( index, element ) {
+          total = checkedEffects.length-1;
+          $('#modal-effects').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-effects').append( ', ' );
+          };
+        });
+      };
+
+    });
+
     selects = [ 'design', 'logo', 'pages', 'images', 'content' ];
 
     for( index in selects ) {
@@ -84,7 +134,6 @@
         var price = all_features[ $(element).val() ];
 
         if( typeof(price) != 'undefined' ) {
-          console.log( $(element).attr('class') );
           if( $(element).val() == 'Hover link/button/box effects' ) {
             totalPrice[0] += price * numberOfPages[0];
             totalPrice[1] += price * numberOfPages[1];
@@ -160,7 +209,7 @@
  <p>You will shortly receive your quote via email. Thank you!</p>
 
   <div class="form-actions">
-  <span class="pull-right"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Get Quote</button></span>
+  <span class="pull-right submit-btn"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Get Quote</button></span>
     
   </div>
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -171,6 +220,11 @@
   <div class="modal-body">
      <div class="span3 pull-right"><img src="images/logo1.png"></div>
     <p><strong>Is your order complete?</strong></p>
+    <p><strong>Design:</strong><br /> <span id="modal-design"></span></p>
+    <p><strong>Content:</strong><br /> <span id="modal-content"></span></p>
+    <p id="modal-features-container"><strong>Features:</strong><br /> <span id="modal-features"></span></p>
+    <p id="modal-social-media-container"><strong>Social Media:</strong><br /> <span id="modal-social-media"></span></p>
+    <p id="modal-effects-container"><strong>Effects:</strong><br /> <span id="modal-effects"></span></p>
     <small>
     <p>Click "<strong>Continue</strong>" to get your quote sent to you.<br />
     If you wish to add something to your order, click "Close"</p></small>
