@@ -215,30 +215,27 @@
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Website Order</h3>
+    <h3 id="myModalLabel">Order Details</h3>
   </div>
   <div class="modal-body">
-     <div class="span3 pull-right fixedPos"><img src="images/logo1.png"></div>
-    <p><strong>Is your order complete?</strong></p>
-    <p><strong>Design:</strong><br /> <span id="modal-design"></span></p>
-    <p><strong>Content:</strong><br /> <span id="modal-content"></span></p>
-    <p id="modal-features-container"><strong>Features:</strong><br /> <span id="modal-features"></span></p>
-    <p id="modal-social-media-container"><strong>Social Media:</strong><br /> <span id="modal-social-media"></span></p>
-    <p id="modal-effects-container"><strong>Effects:</strong><br /> <span id="modal-effects"></span></p>
-    <small>
-    <p>Click "<strong>Continue</strong>" to get your quote sent to you.<br />
-    If you wish to add something to your order, click "Close"</p></small>
+     <div class="span2 pull-right"><img src="images/logo1.png"></div>
 
-    <hr />
+    <p class="well span9"><strong>Design:</strong><br /> <span id="modal-design"></span></p>
+    <p class="well span9"><strong>Content:</strong><br /> <span id="modal-content"></span></p>
+    <p id="modal-features-container" class="well span9"><strong>Features:</strong><br /> <span id="modal-features"></span></p>
+    <p id="modal-social-media-container" class="well span9"><strong>Social Media:</strong><br /> <span id="modal-social-media"></span></p>
+    <p id="modal-effects-container" class="well span9"><strong>Effects:</strong><br /> <span id="modal-effects"></span></p>
 
-    <strong>You will shortly receive an email with quote for your custom website</strong>
 
+   <small>
+    <p class="span9">Click "<strong>Continue</strong>" to get your quote sent to us.<br />
+    We will get in touch with you as soon as it's possible.</p></small>
 
 
     
   </div>
   <div class="modal-footer">
-    <button data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Close</button>
+    <span class="pull-left"><button data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Close</button></span>
     <%= f.button :submit, class: 'btn btn-success', value: 'Continue' %>
   </div>
 </div>
