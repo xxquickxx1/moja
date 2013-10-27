@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025155053) do
+ActiveRecord::Schema.define(:version => 20131026215726) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -195,6 +195,7 @@ ActiveRecord::Schema.define(:version => 20131025155053) do
     t.string   "email"
     t.string   "phone_number"
     t.text     "additional_notes"
+    t.string   "quote"
   end
 
 end

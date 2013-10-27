@@ -147,8 +147,12 @@
 
       if( totalPrice[1] ) {
         $('#price').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
+        $('#price2').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
+        $('#price3').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
       } else {
         $('#price').text( "< £" + totalPrice[0] );
+        $('#price2').text( "< £" + totalPrice[0] );
+        $('#price3').text( "< £" + totalPrice[0] );
 
       };
 
@@ -206,10 +210,23 @@
  <%= f.input :email, label: 'Please enter your email', :required => true %>
  <%= f.input :phone_number, label: 'Please enter your phone number', :required => true %>
  <%= f.input :additional_notes, label: 'Any additional notes to help us', :required => true, :input_html => {style: 'width:350px;', rows: 10} %>
- <p>You will shortly receive your quote via email. Thank you!</p>
+<span id="price3" style="display:none;"></span>
+ <%= f.hidden_field :quote %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+  $('input#website_quote').val($('#price3').text());
+
+    });
+  
+   
+
+</script>
+ <p>Click <strong>continue</strong> to send us your quote!</p>
+
 
   <div class="form-actions">
-  <span class="pull-right submit-btn"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Get Quote</button></span>
+  <span class="pull-right submit-btn"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Continue</button></span>
     
   </div>
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -226,6 +243,14 @@
     <p id="modal-social-media-container" class="well span9"><strong>Social Media:</strong><br /> <span id="modal-social-media"></span></p>
     <p id="modal-effects-container" class="well span9"><strong>Effects:</strong><br /> <span id="modal-effects"></span></p>
 
+    <p class="well span4" id="quoteModal">
+
+    </p>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('#quoteModal').append($('#price2'));
+    });
+    </script>
 
    <small>
     <p class="span9">Click "<strong>Continue</strong>" to get your quote sent to us.<br />
