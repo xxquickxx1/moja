@@ -1,8 +1,7 @@
   require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'active_record'
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/postgres_production')
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
