@@ -48,8 +48,8 @@ Webdesignstories::Application.configure do
     domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "",
-    password: ""
+    user_name: "xxquickxx1",
+    password: "mojasunia20"
   }
 
 
