@@ -18,7 +18,7 @@ Webdesignstories::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-
+config.assets.precompile += %w( bootstrap.css )
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
