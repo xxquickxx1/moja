@@ -19,7 +19,7 @@ Webdesignstories::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-config.assets.precompile += %w( bootstrap.css )
+config.assets.precompile += %w( bootstrap.css animate.css fancybox.css fancybox-buttons.css home.css.scss )
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
