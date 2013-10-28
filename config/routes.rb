@@ -48,7 +48,7 @@ resources :inquiries, :only => [:new, :create] do
 end
 
   get '/blog/new', to: 'blogs#new'
-   get '/blog/:id', to: 'blogs#show', as: :showblog
+   get '/blog/:title', to: 'blogs#show', as: :showblog
   get '/blog', to: 'blogs#blog', as: :blog
   resources :blogs
 
