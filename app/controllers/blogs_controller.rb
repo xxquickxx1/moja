@@ -20,8 +20,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
 
-    @breadcrumb = "Blog Post"
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_title(params[:id])
+    if @blog
+      @breadcrumb = @blog.category
    @page_title = @blog.title + " | " + "Web Design Stories"
   @page_keywords    = 'Web Design, Website Development' + @blog.title + ", " + @blog.category + " " + "Website"
 
@@ -29,6 +30,7 @@ class BlogsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @blog }
     end
+  end
   end
 
   # GET /blogs/new
@@ -54,8 +56,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render json: @blog, status: :created, location: @blog }
+        format.html { redirect_to :back, notice: 'Blog was successfully created.' }
       else
         format.html { render action: "new" }
         format.json { render json: @blog.errors, status: :unprocessable_entity }

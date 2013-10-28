@@ -1,5 +1,14 @@
 Webdesignstories::Application.routes.draw do
-  
+    
+  get '/sitemap', to: 'sitemap#sitemap', defaults: { format: "xml" }
+
+
+  get '/freebies', to: 'freebies#home', as: :freebie
+  resources :freebies do
+      get '/freesites', to: 'freesites#home', as: :freesite
+    resources :freesites
+  end
+
   get "/pricing", to: 'pricing#home', as: :pricing
 
   resources :contacts
@@ -38,8 +47,8 @@ resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection
 end
 
- 
-
+  get '/blog/new', to: 'blogs#new'
+   get '/blog/:title', to: 'blogs#show', as: :showblog
   get '/blog', to: 'blogs#blog', as: :blog
   resources :blogs
 
@@ -50,7 +59,7 @@ end
  get '/sales', to: 'sales#sales', as: :sales
   resources :sales
 
-get '/websites/:id', to: 'websites#no_page'
+
 get '/responsive-design', to: 'websites#responsive', as: :responsive
 get '/websites', to: 'websites#new', as: :websites_path
   resources :websites

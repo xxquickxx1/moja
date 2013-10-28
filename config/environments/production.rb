@@ -3,7 +3,6 @@ Webdesignstories::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
-
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -67,8 +66,8 @@ Webdesignstories::Application.configure do
     domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: "xxquickxx1",
+    password: "mojasunia20"
   }
 
 

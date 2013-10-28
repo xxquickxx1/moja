@@ -1,4 +1,3 @@
-
   $(document).ready(function(){
   	$(function() {
    $('.alert').delay(500).fadeIn('normal', function() {
@@ -8,7 +7,7 @@
   })
   $(document).ready(function(){
   	$(function() {
-   $('.freebies').delay(2800).fadeIn('normal', function() {
+   $('nav .freebies').delay(2800).fadeIn('normal', function() {
       $(this).delay(3200).fadeOut();
    });
 });
@@ -22,6 +21,7 @@
   $(document).ready(function() {
     $(".Forque").addClass("addEffect");
   });
+
 
 
 $('a').hover(function(){ $(this).tooltip('toggle')})
@@ -56,7 +56,6 @@ $(document).ready(function(){
 
 
 });
-
 
 
 

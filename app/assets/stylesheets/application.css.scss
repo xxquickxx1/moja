@@ -626,3 +626,17 @@ display:inline;
 	color:lightgrey;
 }
 
+
+.relative{
+	position:relative;
+}
+
+.fixedPos{
+	position:fixed;
+	top:110px;
+	right:20px;
+}
+
+#price{
+	color: rgb(128, 211, 89);
+}

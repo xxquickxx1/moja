@@ -14,8 +14,8 @@
   // Selects
 
   design = { 'Based on a template': 9.0,
-             'From scratch unique to my business': 15.0, 
-             'Professional design': 20.0 };
+             'From scratch unique to my business': 20.0, 
+             'Professional design': 40.0 };
 
   logo = { 'I have my own logo': 0.0,
               'Design simple logo for me': 35.0,
@@ -31,7 +31,7 @@
              'Supply professional images unique to my business': 20.0 };
 
   content = { 'I will supply content': 5.0,
-              'Write professional content for me': 0.0 };
+              'Write professional content for me': 20.0 };
 
   // Checkboxes
 
@@ -56,6 +56,56 @@
   
 
   $( document ).ready( function() {
+
+    $( '.submit-btn button' ).on( 'click', function( e ) {
+
+      // populate the modal when the button gets clicked
+      $('#modal-design').html( $('#website_design option:selected').text() + '<br />' + $('#website_logo option:selected').text() );
+      $('#modal-content').html( $('#website_pages option:selected').text() + '<br />' + $('#website_images option:selected').text() + '<br />' + $('#website_content option:selected').text() );
+
+      var checkedFeatures = $('.website_features  input:checked');
+      if( checkedFeatures.length == 0 ) {
+        $('#modal-features-container').hide();
+      } else {
+        $('#modal-features-container').show();
+        checkedFeatures.each( function( index, element ) {
+          total = checkedFeatures.length-1;
+          $('#modal-features').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-features').append( ', ' );
+          };
+        });
+      };
+
+      var checkedSocialMedia = $('.website_socialmedia input:checked');
+      if( checkedSocialMedia.length == 0 ) {
+        $('#modal-social-media-container').hide();
+      } else {
+        $('#modal-social-media-container').show();
+        checkedSocialMedia.each( function( index, element ) {
+          total = checkedSocialMedia.length-1;
+          $('#modal-social-media').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-social-media').append( ', ' );
+          };
+        });
+      };
+
+      var checkedEffects = $('.website_effects input:checked');
+      if( checkedEffects.length == 0 ) {
+        $('#modal-effects-container').hide();
+      } else {
+        $('#modal-effects-container').show();
+        checkedEffects.each( function( index, element ) {
+          total = checkedEffects.length-1;
+          $('#modal-effects').append( $( element ).val() );
+          if( index != total ) {
+            $('#modal-effects').append( ', ' );
+          };
+        });
+      };
+
+    });
 
     selects = [ 'design', 'logo', 'pages', 'images', 'content' ];
 
@@ -84,7 +134,6 @@
         var price = all_features[ $(element).val() ];
 
         if( typeof(price) != 'undefined' ) {
-          console.log( $(element).attr('class') );
           if( $(element).val() == 'Hover link/button/box effects' ) {
             totalPrice[0] += price * numberOfPages[0];
             totalPrice[1] += price * numberOfPages[1];
@@ -98,8 +147,12 @@
 
       if( totalPrice[1] ) {
         $('#price').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
+        $('#price2').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
+        $('#price3').text( '£' + totalPrice[0] + " / " + '£' + totalPrice[1] );
       } else {
         $('#price').text( "< £" + totalPrice[0] );
+        $('#price2').text( "< £" + totalPrice[0] );
+        $('#price3').text( "< £" + totalPrice[0] );
 
       };
 
@@ -157,34 +210,57 @@
  <%= f.input :email, label: 'Please enter your email', :required => true %>
  <%= f.input :phone_number, label: 'Please enter your phone number', :required => true %>
  <%= f.input :additional_notes, label: 'Any additional notes to help us', :required => true, :input_html => {style: 'width:350px;', rows: 10} %>
- <p>You will shortly receive your quote via email. Thank you!</p>
+<span id="price3" style="display:none;"></span>
+ <%= f.hidden_field :quote %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+  $('input#website_quote').val($('#price3').text());
+
+    });
+  
+   
+
+</script>
+ <p>Click <strong>continue</strong> to send us your quote!</p>
+
 
   <div class="form-actions">
-  <span class="pull-right"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Get Quote</button></span>
+  <span class="pull-right submit-btn"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Continue</button></span>
     
   </div>
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Website Order</h3>
+    <h3 id="myModalLabel">Order Details</h3>
   </div>
   <div class="modal-body">
-     <div class="span3 pull-right"><img src="images/logo1.png"></div>
-    <p><strong>Is your order complete?</strong></p>
-    <small>
-    <p>Click "<strong>Continue</strong>" to get your quote sent to you.<br />
-    If you wish to add something to your order, click "Close"</p></small>
+     <div class="span2 pull-right"><img src="images/logo1.png"></div>
 
-    <hr />
+    <p class="well span9"><strong>Design:</strong><br /> <span id="modal-design"></span></p>
+    <p class="well span9"><strong>Content:</strong><br /> <span id="modal-content"></span></p>
+    <p id="modal-features-container" class="well span9"><strong>Features:</strong><br /> <span id="modal-features"></span></p>
+    <p id="modal-social-media-container" class="well span9"><strong>Social Media:</strong><br /> <span id="modal-social-media"></span></p>
+    <p id="modal-effects-container" class="well span9"><strong>Effects:</strong><br /> <span id="modal-effects"></span></p>
 
-    <strong>You will shortly receive an email with quote for your custom website</strong>
+    <p class="well span4" id="quoteModal">
 
+    </p>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('#quoteModal').append($('#price2'));
+    });
+    </script>
+
+   <small>
+    <p class="span9">Click "<strong>Continue</strong>" to get your quote sent to us.<br />
+    We will get in touch with you as soon as it's possible.</p></small>
 
 
     
   </div>
   <div class="modal-footer">
-    <button data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Close</button>
+    <span class="pull-left"><button data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Close</button></span>
     <%= f.button :submit, class: 'btn btn-success', value: 'Continue' %>
   </div>
 </div>
