@@ -8,7 +8,7 @@
 <% @blogs.each do |blog| %>
 <hr />
   <span class="pull-right blue">Posted: <%= time_ago_in_words(blog.created_at) %> ago</span>
-    <h4><%= link_to blog.title.gsub('-', ' '), "/blogs/#{blog.title}", id: blog.id %></h4>
+    <h4><%= link_to blog.title, "/blogs/#{blog.id}" %></h4>
     <p class="muted">Category: <%= blog.category %></p>
     <p><%= truncate blog.description, length: 200 %></p>
 

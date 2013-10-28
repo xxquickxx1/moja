@@ -1,0 +1,683 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+/* line 26, ../../app/assets/stylesheets/application.css.scss */
+body {
+  padding-top: 90px;
+  background-image: url("/images/noise.png");
+  background-repeat: repeat;
+}
+/* line 31, ../../app/assets/stylesheets/application.css.scss */
+body .img-shadow {
+  border: solid 1px lightgrey;
+  padding: 4px;
+  box-shadow: 1px 0px 5px lightgrey;
+}
+
+@font-face {
+  font-family: Nevis;
+  src: url("/fonts/nevis.ttf");
+  font-weight: 400;
+}
+
+/* line 44, ../../app/assets/stylesheets/application.css.scss */
+.Forque {
+  font-family: Nevis;
+  letter-spacing: 10px;
+}
+
+/* line 50, ../../app/assets/stylesheets/application.css.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 54, ../../app/assets/stylesheets/application.css.scss */
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+/* line 58, ../../app/assets/stylesheets/application.css.scss */
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+/* line 61, ../../app/assets/stylesheets/application.css.scss */
+.padding10 {
+  padding: 10px;
+}
+
+/* line 65, ../../app/assets/stylesheets/application.css.scss */
+.margin-top10 {
+  margin-top: 10px;
+}
+
+/* line 69, ../../app/assets/stylesheets/application.css.scss */
+.margin-top20 {
+  margin-top: 20px;
+}
+
+/* line 73, ../../app/assets/stylesheets/application.css.scss */
+.home-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 77, ../../app/assets/stylesheets/application.css.scss */
+.home-container .span1, .home-container .span2, .home-container .span3, .home-container .span4, .home-container .span5, .home-container .span6, .home-container .span7, .home-container .span8, .home-container .span9, .home-container .span10, .home-container .span11, .home-container .span12 {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 86, ../../app/assets/stylesheets/application.css.scss */
+.home-lower-row {
+  height: 216px;
+  padding-top: 30px;
+  border-bottom: 3px solid lightgrey;
+}
+/* line 91, ../../app/assets/stylesheets/application.css.scss */
+.home-lower-row a:link, .home-lower-row a:visited, .home-lower-row a:hover {
+  color: #666;
+}
+
+/* line 100, ../../app/assets/stylesheets/application.css.scss */
+.white {
+  background-color: white;
+}
+
+/* line 105, ../../app/assets/stylesheets/application.css.scss */
+.thumbnails {
+  float: left;
+}
+
+/* line 109, ../../app/assets/stylesheets/application.css.scss */
+.portfolioItem:nth-child(2n + 2) {
+  float: right;
+}
+
+/* line 113, ../../app/assets/stylesheets/application.css.scss */
+.port li {
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+}
+
+/* line 119, ../../app/assets/stylesheets/application.css.scss */
+.port li:hover {
+  box-shadow: 2px 2px 10px 10px #C9C9C9;
+  -webkit-box-shadow: 0px 0px 13px 2px #C9C9C9;
+  -moz-box-shadow: 2px 2px 10px 10px #C9C9C9;
+}
+
+/* line 127, ../../app/assets/stylesheets/application.css.scss */
+.new_website .select {
+  width: 400px;
+  height: 50px;
+}
+
+/* line 134, ../../app/assets/stylesheets/application.css.scss */
+.padding-top-7 {
+  padding-top: 7px;
+}
+
+/* line 138, ../../app/assets/stylesheets/application.css.scss */
+.padding-10 {
+  padding: 10px;
+}
+
+/* line 142, ../../app/assets/stylesheets/application.css.scss */
+.padding-20 {
+  padding: 20px;
+}
+
+/* line 146, ../../app/assets/stylesheets/application.css.scss */
+.rounded-box {
+  -webkit-border-radius: 7px;
+}
+
+/* line 150, ../../app/assets/stylesheets/application.css.scss */
+.logo {
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out .2s;
+}
+
+/* line 155, ../../app/assets/stylesheets/application.css.scss */
+.logo:hover {
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  /* IE 9 */
+  -webkit-transform: rotate(30deg);
+  /* Safari and Chrome */
+}
+
+/* line 161, ../../app/assets/stylesheets/application.css.scss */
+nav {
+  width: 100%;
+  height: 80px;
+  background: #222;
+}
+/* line 166, ../../app/assets/stylesheets/application.css.scss */
+nav .btn {
+  padding: 10px 14px;
+}
+/* line 170, ../../app/assets/stylesheets/application.css.scss */
+nav ul {
+  text-align: left;
+}
+/* line 174, ../../app/assets/stylesheets/application.css.scss */
+nav ul li {
+  -webkit-transition: padding .05s linear;
+  -moz-transition: padding .05s linear;
+  -ms-transition: padding .05s linear;
+  -o-transition: padding .05s linear;
+  transition: padding .05s linear;
+  font-size: 1.2em;
+  letter-spacing: 0;
+  font-weight: bold;
+  color: #6b7680;
+  padding: 0 15px;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 193, ../../app/assets/stylesheets/application.css.scss */
+nav ul li.drop {
+  position: relative;
+}
+/* line 196, ../../app/assets/stylesheets/application.css.scss */
+nav ul > li {
+  display: inline-block;
+}
+/* line 199, ../../app/assets/stylesheets/application.css.scss */
+nav ul li a {
+  line-height: 80px;
+  display: block;
+  padding: 0 0px;
+  color: #777;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+/* line 210, ../../app/assets/stylesheets/application.css.scss */
+nav ul li a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+/* line 215, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut .triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+/* line 226, ../../app/assets/stylesheets/application.css.scss */
+nav .dropdownContain {
+  width: 160px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -96px;
+  /* half of width */
+  top: -400px;
+}
+/* line 234, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut {
+  background: white;
+  float: left;
+  position: relative;
+  margin-top: 0px;
+  opacity: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  -ms-transition: all .1s ease-out;
+  -o-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+/* line 253, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut ul {
+  float: left;
+  padding: 10px 0;
+  margin-left: 0px;
+}
+/* line 258, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut ul li {
+  text-align: left;
+  float: left;
+  min-width: 155px;
+  padding: 12px 0 10px 15px;
+  margin: 0px 10px;
+  color: #777;
+  font-size: 0.8em;
+  -webkit-font-smoothing: antialiased;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background .1s ease-out;
+  -moz-transition: background .1s ease-out;
+  -ms-transition: background .1s ease-out;
+  -o-transition: background .1s ease-out;
+  transition: background .1s ease-out;
+}
+/* line 277, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut ul li a {
+  color: #777;
+  line-height: 20px;
+}
+/* line 282, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut ul li a:visited {
+  color: #777;
+}
+/* line 286, ../../app/assets/stylesheets/application.css.scss */
+nav .dropOut ul li:hover {
+  background: #f6f6f6;
+}
+/* line 290, ../../app/assets/stylesheets/application.css.scss */
+nav ul li:hover .dropdownContain {
+  top: 65px;
+}
+/* line 291, ../../app/assets/stylesheets/application.css.scss */
+nav ul li:hover .underline {
+  border-bottom-color: #777;
+}
+/* line 292, ../../app/assets/stylesheets/application.css.scss */
+nav ul li:hover .dropOut {
+  opacity: 1;
+  margin-top: 8px;
+}
+/* line 294, ../../app/assets/stylesheets/application.css.scss */
+nav .helpbuttons {
+  margin-top: 14px;
+}
+
+/* line 300, ../../app/assets/stylesheets/application.css.scss */
+.green {
+  color: #5bb75b;
+}
+
+/* line 304, ../../app/assets/stylesheets/application.css.scss */
+.modalLeftCol {
+  width: 49%;
+  float: left;
+}
+
+/* line 309, ../../app/assets/stylesheets/application.css.scss */
+.modalRightCol {
+  width: 49%;
+  float: right;
+}
+
+/* line 318, ../../app/assets/stylesheets/application.css.scss */
+.sales > li {
+  width: 330px;
+}
+
+/* line 322, ../../app/assets/stylesheets/application.css.scss */
+.sale_image_info {
+  min-height: 380px;
+}
+
+/* line 326, ../../app/assets/stylesheets/application.css.scss */
+.red {
+  color: #d14;
+}
+
+/* line 330, ../../app/assets/stylesheets/application.css.scss */
+.sale-thumb {
+  max-width: 300px;
+}
+
+/* line 334, ../../app/assets/stylesheets/application.css.scss */
+.sale-price {
+  text-align: right;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* line 340, ../../app/assets/stylesheets/application.css.scss */
+.small-photo-thumb {
+  max-width: 270px;
+  max-height: 270px;
+}
+
+/* line 345, ../../app/assets/stylesheets/application.css.scss */
+.footer {
+  min-height: 300px;
+  border-top: 1px solid lightgrey;
+  padding-bottom: 30px;
+}
+/* line 349, ../../app/assets/stylesheets/application.css.scss */
+.footer .span4 {
+  padding: 20;
+  margin-top: 20px;
+}
+/* line 354, ../../app/assets/stylesheets/application.css.scss */
+.footer .footer-right {
+  margin-top: 84px;
+}
+
+/* line 361, ../../app/assets/stylesheets/application.css.scss */
+.margin-bottom-100 {
+  margin-bottom: 100px;
+}
+
+/* line 365, ../../app/assets/stylesheets/application.css.scss */
+.blue {
+  color: #2093c0;
+}
+
+/* line 369, ../../app/assets/stylesheets/application.css.scss */
+.about-thumbs > ul li {
+  margin-left: 80px;
+}
+
+/* line 373, ../../app/assets/stylesheets/application.css.scss */
+form.simple_form {
+  display: inline;
+}
+
+/* line 378, ../../app/assets/stylesheets/application.css.scss */
+.rounded {
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -o-border-radius: 999px;
+  border-radius: 999px;
+  border: solid 5px #E6E6E6;
+  text-align: center;
+}
+
+/* line 387, ../../app/assets/stylesheets/application.css.scss */
+.bg-turcus {
+  background-color: #1bbc9b;
+}
+
+/* line 391, ../../app/assets/stylesheets/application.css.scss */
+.bg-red-dark {
+  background-color: #c1392b;
+}
+
+/* line 395, ../../app/assets/stylesheets/application.css.scss */
+.bg-orange {
+  background-color: #e77e23;
+}
+
+/* line 399, ../../app/assets/stylesheets/application.css.scss */
+.bg-yellow {
+  background-color: #f1c40f;
+}
+
+/* line 402, ../../app/assets/stylesheets/application.css.scss */
+.bg-light-red {
+  background-color: #e84c3d;
+}
+
+/* line 406, ../../app/assets/stylesheets/application.css.scss */
+.bg-purple {
+  background-color: #9b58b5;
+}
+
+/* line 410, ../../app/assets/stylesheets/application.css.scss */
+.icon {
+  max-width: 123px;
+  margin: 0 auto;
+}
+
+/* line 415, ../../app/assets/stylesheets/application.css.scss */
+.portfolioItem {
+  width: 400px;
+}
+
+/* line 419, ../../app/assets/stylesheets/application.css.scss */
+.inbox-row {
+  width: 90%;
+  padding: 20px;
+  border: solid 1px lightgrey;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* line 430, ../../app/assets/stylesheets/application.css.scss */
+.nav-list li:nth-child(1n + 2) {
+  border-top: solid 1px lightgrey;
+}
+
+/* line 434, ../../app/assets/stylesheets/application.css.scss */
+.nav-list {
+  border: solid 1px lightgrey;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 443, ../../app/assets/stylesheets/application.css.scss */
+.blue-link a:link, .blue-link a:visited {
+  color: #0088cc;
+}
+
+/* line 452, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h1 {
+  color: rgba(255, 255, 255, 0.2);
+}
+/* line 456, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h1.Forque {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 2.9em;
+  transition: text-shadow 3s ease;
+  text-shadow: 0px 0px 100px white;
+  -webkit-transition: text-shadow 3s ease;
+  -moz-transition: text-shadow 3s ease;
+  -o-transition: text-shadow 3s ease;
+}
+/* line 466, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h1.addEffect {
+  text-shadow: 0px 0px 2px white;
+}
+/* line 470, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h2.heroh2 {
+  margin-top: -6px;
+  padding-left: 20px;
+  text-shadow: 0px 0px 2px #5bb75b;
+  font-size: 1.4em;
+}
+/* line 477, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit p {
+  font-family: nevis;
+}
+
+/* line 482, ../../app/assets/stylesheets/application.css.scss */
+.login-form {
+  width: 400px;
+  border: solid 10px #ededed;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  margin-bottom: 20px;
+}
+/* line 493, ../../app/assets/stylesheets/application.css.scss */
+.login-form form input {
+  width: 385px;
+  height: 30px;
+}
+/* line 498, ../../app/assets/stylesheets/application.css.scss */
+.login-form form input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+}
+/* line 503, ../../app/assets/stylesheets/application.css.scss */
+.login-form form input[type="submit"] {
+  height: 50px;
+  font-size: 1.3em;
+  margin-left: 7px;
+}
+
+/* line 515, ../../app/assets/stylesheets/application.css.scss */
+.modalLeftCol form input {
+  width: 260px;
+  height: 40px;
+}
+/* line 520, ../../app/assets/stylesheets/application.css.scss */
+.modalLeftCol textarea {
+  width: 260px;
+}
+
+/* line 525, ../../app/assets/stylesheets/application.css.scss */
+.home-flash {
+  margin-top: 27px;
+  float: left;
+}
+/* line 528, ../../app/assets/stylesheets/application.css.scss */
+.home-flash .alert {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+/* line 533, ../../app/assets/stylesheets/application.css.scss */
+.home-flash .alert-success {
+  color: white;
+  font-weight: bold;
+  font-family: helvetica;
+  border: none;
+}
+/* line 541, ../../app/assets/stylesheets/application.css.scss */
+.home-flash .alert-error {
+  color: #b94a48;
+  font-weight: bold;
+  font-family: helvetica;
+  border: none;
+  text-shadow: none;
+}
+
+/* line 550, ../../app/assets/stylesheets/application.css.scss */
+.boldedTable {
+  font-weight: bold;
+}
+/* line 552, ../../app/assets/stylesheets/application.css.scss */
+.boldedTable td:nth-child(n+2) {
+  color: #5bb75b;
+}
+
+/* line 558, ../../app/assets/stylesheets/application.css.scss */
+.colorTable th {
+  background-color: #d9edf7;
+}
+/* line 562, ../../app/assets/stylesheets/application.css.scss */
+.colorTable .colorTab td:first-child {
+  background-color: #d9edf7;
+}
+
+/* line 567, ../../app/assets/stylesheets/application.css.scss */
+.freebies {
+  position: relative;
+}
+/* line 569, ../../app/assets/stylesheets/application.css.scss */
+.freebies span {
+  position: absolute;
+  top: -13px;
+  padding: 2px;
+}
+
+/* line 576, ../../app/assets/stylesheets/application.css.scss */
+progress[value] {
+  width: 250px;
+  height: 20px;
+}
+
+/* line 580, ../../app/assets/stylesheets/application.css.scss */
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 250px;
+  height: 20px;
+}
+
+/* line 588, ../../app/assets/stylesheets/application.css.scss */
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* line 593, ../../app/assets/stylesheets/application.css.scss */
+progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #0099cc, #ff4444);
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+@-webkit-keyframes animate-stripes {
+  /* line 607, ../../app/assets/stylesheets/application.css.scss */
+  100% {
+    background-position: -100px 0px;
+    -webkit-animation: animate-stripes 5s linear infinite;
+    animation: animate-stripes 5s linear infinite;
+  }
+}
+
+@keyframes animate-stripes {
+  /* line 614, ../../app/assets/stylesheets/application.css.scss */
+  100% {
+    background-position: -100px 0px;
+    -webkit-animation: animate-stripes 5s linear infinite;
+    animation: animate-stripes 5s linear infinite;
+  }
+}
+
+/* line 620, ../../app/assets/stylesheets/application.css.scss */
+.invited {
+  display: inline;
+}
+
+/* line 625, ../../app/assets/stylesheets/application.css.scss */
+.invitedCount {
+  font-size: 4em;
+  color: lightgrey;
+}
+
+/* line 631, ../../app/assets/stylesheets/application.css.scss */
+.relative {
+  position: relative;
+}
+
+/* line 635, ../../app/assets/stylesheets/application.css.scss */
+.fixedPos {
+  position: fixed;
+  top: 110px;
+  right: 20px;
+}
+
+/* line 641, ../../app/assets/stylesheets/application.css.scss */
+#price {
+  color: #80d359;
+}

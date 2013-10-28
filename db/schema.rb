@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026215726) do
+ActiveRecord::Schema.define(:version => 20131016220143) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -30,27 +30,6 @@ ActiveRecord::Schema.define(:version => 20131026215726) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
-
-  create_table "freebies", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
-
-  create_table "freesites", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "freeby_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "freesites", ["freeby_id"], :name => "index_freesites_on_freeby_id"
 
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
@@ -195,7 +174,6 @@ ActiveRecord::Schema.define(:version => 20131026215726) do
     t.string   "email"
     t.string   "phone_number"
     t.text     "additional_notes"
-    t.string   "quote"
   end
 
 end
