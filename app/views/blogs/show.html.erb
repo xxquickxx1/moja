@@ -9,7 +9,7 @@
 <hr />
 
 <p>
-  <%= @blog.description %>
+  <%= simple_format @blog.description %>
 </p>
 <%= link_to 'Back', blog_path %>
 <% end %>
