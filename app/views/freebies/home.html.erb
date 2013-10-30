@@ -4,7 +4,7 @@
 <%= render 'layouts/breadcrumb' %>
 
 
-<% if current_user.admin? %>
+<% if current_user && current_user.admin? %>
 <div class="pull-right">
 <%= link_to 'New Project', new_freeby_path, class: 'button-link-green' %>
 <hr />
@@ -15,10 +15,29 @@
 
 <% @freeby.each do |freebie| %>
 	
-	<div class="well span4">
-	<%= freebie.name %>
-	<%= truncate freebie.description %>
-	<%= link_to 'Show', freeby_freesite_path(freebie) %>
+	<div class="well-blue span8 relative"><span class="cornerSquare">
+		<div class="pull-right countFreesites"><%= freebie.freesites.count %></div>
+
+	</span>
+	<div class="row-fluid">
+	<div class="span8 padding-20 ">
+	<h2 class="dark-blue"><%= freebie.name %></h2>
+	<p><%= freebie.description %></p>
+	<br />
+	<div class="pull-left"><%= link_to 'View project', freeby_freesite_path(freebie), class: 'button-link-green' %></div>
+	</div>
+	<div class="span4 padding-20">
+
+		
+		<div class="text-center">
+  <div class="rounded bg-light-red icon"><%= image_tag '/images/icons/Above-The-Fold-40.png', vspace: 40 %>
+  </div>
+  <strong>Free Websites</strong>
+</div>
+
+	</div>
+	</div>
+
 	</div>
 	
 <% end %>

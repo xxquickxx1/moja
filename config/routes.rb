@@ -1,10 +1,10 @@
 Webdesignstories::Application.routes.draw do
-    
-  get '/sitemap', to: 'sitemap#sitemap', defaults: { format: "xml" }
 
+  get '/sitemap', to: 'sitemap#sitemap', defaults: { format: "xml" }
 
   get '/freebies', to: 'freebies#home', as: :freebie
   resources :freebies do
+
       get '/freesites', to: 'freesites#home', as: :freesite
     resources :freesites
   end

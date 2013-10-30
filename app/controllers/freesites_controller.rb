@@ -1,17 +1,24 @@
 class FreesitesController < ApplicationController
-	before_filter :validate_admin, :except => [:home]
+	before_filter :validate_admin, :only => [:new, :create]
 before_filter :find_freebie
 
-
 def home
-@breadcrumb = "Freebies"
-@freebies = @freeby.freesites.all
+@breadcrumb = @freeby.name
+@page_title       = 'Free Websites | Website Templates | Cool Websites | Web Design Stories'
+@page_description = '100% Free websites, no contract no commissions. For your personal / business use. Free website, free templates.'
+@page_keywords    = 'website, free website, cheap website, cool website, websites, website, cool, free, cheap, template, edinburgh, web design cheap, web design free, professional templates free, professional websites free'
+
+@freebies = @freeby.freesites.order("created_at DESC")
 
 end
 
 def new
 @freesite = @freeby.freesites.build
 
+end
+
+def show
+	@site = @freeby.freesites.find(params[:id])
 end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026215726) do
+ActiveRecord::Schema.define(:version => 20131029142103) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -46,8 +46,12 @@ ActiveRecord::Schema.define(:version => 20131026215726) do
     t.string   "name"
     t.text     "description"
     t.integer  "freeby_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "freesites", ["freeby_id"], :name => "index_freesites_on_freeby_id"

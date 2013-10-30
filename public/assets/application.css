@@ -601,11 +601,6 @@ form.simple_form {
   position: relative;
 }
 /* line 569, ../../app/assets/stylesheets/application.css.scss */
-.freebies span {
-  position: absolute;
-  top: -13px;
-  padding: 2px;
-}
 
 /* line 576, ../../app/assets/stylesheets/application.css.scss */
 progress[value] {
@@ -680,4 +675,44 @@ progress[value]::-webkit-progress-value {
 /* line 641, ../../app/assets/stylesheets/application.css.scss */
 #price {
   color: #80d359;
+}
+
+.well-blue h1, h2, h3, h4, h5, h6{
+  color:white;
+  line-height: 0;
+}
+
+.well-blue p{
+margin-top:-10px;
+  color: rgb(36, 129, 182);
+}
+
+.countFreesites{
+  color:rgb(21, 135, 180);
+  font-weight: bold;
+  font-size:2em;
+  margin-top:6px;
+}
+
+.cornerSquare{
+  position:absolute;
+  top:0px;
+  right:0;
+  padding:12px;
+  border-left:solid 5px #f5f5f5;
+  border-bottom:solid 5px #f5f5f5;
+  border-bottom-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -o-border-bottom-left-radius: 5px;
+}
+
+.freesite-link-right{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+}
+
+.padding-left-20{
+  padding-left: 20px;
 }

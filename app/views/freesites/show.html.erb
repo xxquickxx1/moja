@@ -4,9 +4,17 @@
 
 	
 	<div class="well">
-	<%= @freebie.name %>
-	<%= @freebie.description %>
+	<%= image_tag(@site.photo.url) %>
 	</div>
+
+	<table class="table">
+	<th>Name:</th>
+	<th>Description</th>
+	<tr>
+		<td><%= @site.name %></td>
+		<td><div class="span6"><%= @site.description %></div></td>
+	</tr>
+	</table>
 
 
 </div>

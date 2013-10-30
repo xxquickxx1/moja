@@ -1,3 +1,3 @@
 class Freeby < ActiveRecord::Base
-	has_many :freesites
+	has_many :freesites, :dependent => :destroy
 end
