@@ -50,6 +50,15 @@ body .img-shadow {
 .margin-top-20 {
   margin-top: 20px;
 }
+.margin-top-8{
+  margin-top:8px;
+}
+
+.home-seo-button{
+  position: absolute;
+  bottom:30px;
+  right:20px;
+}
 
 /* line 58, ../../app/assets/stylesheets/application.css.scss */
 .margin-bottom-20 {
