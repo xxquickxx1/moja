@@ -1,7 +1,9 @@
 <div class="home-container">
-<div class="row-fluid padding-20 rounded-box white">
+<div class="row-fluid rounded-box white">
 <div class="span12">
 <%= render 'layouts/breadcrumb' %>
+<div class="row-fluid">
+<div class="span12  padding-20">
 
 <% if current_user && current_user.admin? %>
 <div class="pull-right">
@@ -26,7 +28,7 @@
 <% end %>
 
 <a href="/zips/lol.zip" download>Download link</a>
-
+</div></div>
 </div>
 </div>
 </div>

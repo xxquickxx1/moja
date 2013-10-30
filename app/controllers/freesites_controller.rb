@@ -18,6 +18,10 @@ def new
 end
 
 def show
+	@page_title       = 'Free Websites | Web Design Stories'
+@page_description = '100% Free websites, no contract no commissions. For your personal / business use. Free website, free templates.'
+@page_keywords    = 'website, free website, cheap website, cool website, websites, website, cool, free, cheap, template, edinburgh, web design cheap, web design free, professional templates free, professional websites free'
+
 	@site = @freeby.freesites.find(params[:id])
 end
 

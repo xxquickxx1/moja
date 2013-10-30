@@ -1,22 +1,31 @@
 <div class="home-container">
 <div class="row-fluid">
 
-<div class="span12 white padding-20">
+<div class="span12 white">
 <%= render 'layouts/breadcrumb' %>
 <h3><%= @portfolio.name %></h3>
+<div class="row-fluid">
+<div class="span12 padding-20">
 
-<h5>Website url</h5>
-<p><%= @portfolio.url %></p>
-<h5>Category</h5>
-<p><%= @portfolio.category %></p>
-<h5>Description</h5>
-<p><%= @portfolio.description %></p>
+<table class="table">
+<th>Website link</th>
+<th>Category</th>
+
+<tr>
+	<td><%= @portfolio.url %></td>
+	<td><%= @portfolio.category %></td>
+</tr>
+
+</table>
+
+<div class="well"><p><%= @portfolio.description %></p></div>
 
 <div class="row-fluid">
-<div class="span12 text-center">
-<%= image_tag @portfolio.photo.url, class: 'img-polaroid' %>
+<div class="span12 text-center well">
+<%= image_tag @portfolio.photo.url %>
 </div>
 </div>
+</div></div>
 
 </div>
 </div>

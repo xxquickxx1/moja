@@ -1,11 +1,13 @@
 <div class="home-container">
-<div class="row-fluid rounded-box white padding-20">
+<div class="row-fluid rounded-box white">
 <div class="span12">
 <%= render 'layouts/breadcrumb' %>
+<div class="row-fluid">
+<div class="span12">
 
 
 <% if current_user && current_user.admin? %>
-<div class="pull-right">
+<div class="pull-right" style="padding-right:20px;">
 <%= link_to 'New Project', new_freeby_path, class: 'button-link-green' %>
 <hr />
 </div>
@@ -24,7 +26,7 @@
 	<h2 class="dark-blue"><%= freebie.name %></h2>
 	<p><%= freebie.description %></p>
 	<br />
-	<div class="pull-left"><%= link_to 'View project', freeby_freesite_path(freebie), class: 'button-link-green' %></div>
+	<div class="pull-left"><%= link_to 'View project', freeby_freesite_path(freebie), class: 'button-link' %></div>
 	</div>
 	<div class="span4 padding-20">
 
@@ -42,7 +44,7 @@
 	
 <% end %>
 
-
+</div></div>
 </div>
 </div>
 </div>
