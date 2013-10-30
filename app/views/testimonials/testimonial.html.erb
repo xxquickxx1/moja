@@ -1,8 +1,9 @@
 <div class="home-container">
 <div class="row-fluid">
-
-<div class="span12 white padding-20">
+<div class="span12 white">
 <%= render 'layouts/breadcrumb' %>
+<div class="row-fluid">
+<div class="span12 padding-20">
 <% if user_signed_in? %>
 <span class="pull-right"><%= link_to 'New Testimonial', new_testimonial_path, class: 'button-link-green' %></span>
 <% end %>
@@ -16,7 +17,7 @@
 <% end %>
 
 
-
+</div></div>
 </div>
 
 </div>

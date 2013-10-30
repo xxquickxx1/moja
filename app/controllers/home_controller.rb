@@ -20,8 +20,8 @@ class HomeController < ApplicationController
   end
 
   def whoweare
-        @page_description = "Web Design & Development for small companies, grow your business and get more customers!"
-   @page_title = "Web Design in Edinburgh | Web Designer Edinburgh | For Small Companies"
+        @page_description = "Web Design & Development for small businesses, grow your business and get more customers!"
+   @page_title = "Web Design in Edinburgh | Web Designer Edinburgh | For Small Businesses"
    @page_keywords    = 'Web Design, Edinburgh, Web design in, web design in Edinburgh, web designer, designer, web, Website Development, Cheap SEO, Web Designer, Cheap Website, Get more customers'
   
     @breadcrumb = "Who We Are"

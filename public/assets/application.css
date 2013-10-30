@@ -14,7 +14,8 @@
 /* line 26, ../../app/assets/stylesheets/application.css.scss */
 body {
   padding-top: 90px;
-  background-image: url("/images/noise.png");
+ /* background-image: url("/images/noise.png"); */
+ background-color:#F5F5F5;
   background-repeat: repeat;
 }
 /* line 31, ../../app/assets/stylesheets/application.css.scss */
@@ -34,6 +35,10 @@ body .img-shadow {
 .Forque {
   font-family: Nevis;
   letter-spacing: 10px;
+}
+
+.row-fluid h3{
+  padding:20px;
 }
 
 /* line 50, ../../app/assets/stylesheets/application.css.scss */

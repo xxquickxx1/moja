@@ -233,7 +233,6 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #777;
-  background-color: #ffffff;
 }
 
 a {
@@ -683,7 +682,7 @@ cite {
 }
 
 .muted {
-  color: #999999;
+  color: #c2c2c2;
 }
 
 a.muted:hover,
@@ -5016,16 +5015,20 @@ border-radius: 4px;
   padding: 8px 15px;
   margin: 0 0 20px;
   list-style: none;
-  background-color: #f5f5f5;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+  background-color: #ececec;
+  -webkit-border-top-left-radius: 6px;
+     -moz-border-top-left-radius: 6px;
+          border-top-left-radius: 6px;
+
+  -webkit-border-top-right-radius: 6px;
+     -moz-border-top-right-radius: 6px;
+          border-top-right-radius: 6px;
 }
 
 .breadcrumb > li {
   display: inline-block;
   *display: inline;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #c2c2c2;
   *zoom: 1;
 }
 
@@ -5611,7 +5614,7 @@ border-radius: 4px;
 }
 
 .row-fluid .thumbnails {
-  margin-left: 0;
+  
 }
 
 .thumbnails > li {
