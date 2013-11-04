@@ -1,0 +1,70 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span9 white">
+<%= render 'layouts/breadcrumb' %>
+
+
+<div class="page-header"><h3 class="green">Thank you for your order!</h3></div>
+
+<table class="table">
+              <thead>
+                <tr>
+                
+                  <th>Design</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                
+                  <td><%= @website.design %></td>
+               
+                </tr>
+                
+                <th>Logo</th>
+
+                  <tr>
+                    <td><%= @website.logo %></td>
+                  </tr>
+
+
+                <th>Content</th>
+
+                  <tr>
+                    <td><%= @website.pages %></td>
+                  </tr>
+                   <tr>
+                    <td><%= @website.images %></td>
+                  </tr>
+                   <tr>
+                    <td><%= @website.content %></td>
+                  </tr>
+
+                  <th>Features</th>
+
+                  <tr>
+                    <td><%= @website.features %></td>
+                  </tr>
+
+                  <th>Social Media</th>
+
+                  <tr>
+                    <td><%= @website.socialmedia %></td>
+                  </tr>
+
+              </tbody>
+            </table>
+
+<hr />
+<p>Have a look on our <%= link_to 'Website SEO', websites_path %> services and get your site on top of Google and other major Search Engines! </p>
+
+
+</div>
+
+<div class="span2 white pull-right">
+<h4>Your shopping cart is empty</h4>
+</div>
+
+</div>
+</div>

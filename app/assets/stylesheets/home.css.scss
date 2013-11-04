@@ -1,0 +1,121 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.index{
+	padding-top:0px;
+}
+
+.home-master-head{
+	background-image: url('/images/home-files/fall.jpg');
+	background-repeat:repeat;
+	min-height:300px;
+	border-bottom:solid 7px lightgrey;
+
+	.nav-pills > li > a {
+	color:white;
+	}
+}
+
+.home-tab{
+	border-bottom:10px solid #e7e7e7;
+}
+
+.border{
+	border:solid 1px lightgrey;
+}
+
+.test{
+	background-color:lightgrey;
+}
+
+
+
+
+.home-form input{
+	width:206px;
+	float:left;
+}
+
+#firstField{
+	margin-right:20px;
+}
+
+#wideField{
+	width:450px;
+}
+
+.button-link, .read-more-link, button, .button {
+color: white !important;
+position: relative;
+text-decoration: none !important;
+display: inline-block;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: none;
+border-bottom: 3px solid #1469a7;
+white-space: nowrap;
+cursor: pointer;
+vertical-align: baseline;
+-webkit-transition: background-color 400ms ease;
+-moz-transition: background-color 400ms ease;
+-o-transition: background-color 400ms ease;
+transition: background-color 400ms ease;
+overflow: visible;
+width: auto;
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+padding: 7px 20px;
+background: #1072ba;
+font-weight:bold;
+}
+
+.button-link:hover {
+	background: #0d69ad;
+  text-decoration: none !important;
+  border-color: #085995;
+}
+
+
+.button-link-green{
+color: white !important;
+position: relative;
+text-decoration: none !important;
+display: inline-block;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: none;
+border-bottom: 4px solid #388038;
+white-space: nowrap;
+cursor: pointer;
+vertical-align: baseline;
+-webkit-transition: background-color 400ms ease;
+-moz-transition: background-color 400ms ease;
+-o-transition: background-color 400ms ease;
+transition: background-color 400ms ease;
+overflow: visible;
+width: auto;
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+padding: 7px 20px;
+background: #5bb75b;
+font-weight:bold;
+}
+
+.button-link-green:hover {
+	background: #49a749;
+  text-decoration: none !important;
+  border-color: #2f6a2f;
+}
+
+
+.big-link{
+	padding: 20px 20px;
+	width:200px;
+	text-align:center;
+
+}

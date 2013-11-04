@@ -1,0 +1,29 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+ 
+<div class="row-fluid">
+<div class="span4">
+<%= render partial: 'admin/shared/nav_tab' %>
+</div>
+
+<div class="span8">
+<% @websites.each do |website| %>
+
+<div class="inbox-row">
+<span class="pull-right"><%= time_ago_in_words(website.created_at).capitalize %> ago</span>
+<%= link_to website.email, admin_website_path(website) %>
+<% @user = User.find_by_email(website.email) %><% if @user %>&nbsp;&nbsp;<span class="label label-info">Registered</span><% end %>
+
+ </div>
+
+<% end %>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+

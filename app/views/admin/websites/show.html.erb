@@ -1,0 +1,43 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+ 
+<div class="row-fluid">
+<div class="span4">
+<%= render partial: 'admin/shared/nav_tab' %>
+</div>
+
+<div class="span8">
+
+<span class="pull-left"><h5>Email: <%= @website.email %></h5></span>
+<span class="pull-right"><h5>Email: <%= @website.phone_number %></h5></span><br />
+<hr />
+<h1><small>Design</small></h1>
+<%= @website.design %><br />
+<%= @website.logo %>
+<hr />
+<h1><small>Content</small></h1>
+<%= @website.pages %><br />
+<%= @website.images %>
+<hr />
+
+<h1><small>Features</small></h1>
+<%= @website.features.gsub('-', '') %>
+<hr />
+
+<h1><small>Social Media</small></h1>
+<%= @website.socialmedia.gsub('-', '') %>
+<hr />
+
+<h1><small>Effects</small></h1>
+<%= @website.effects.gsub('-', '') %>
+<hr />
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+

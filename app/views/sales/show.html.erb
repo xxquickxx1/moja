@@ -1,0 +1,50 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span12 white">
+<%= render 'layouts/breadcrumb' %>
+
+<div class="sale-price">
+
+<%= link_to "Pay #{number_to_currency(@sale.price, unit: '£')}", { :controller => 'charges', :action => 'new', :website_id => @sale.id}, class: 'btn btn-primary' %>
+</div>
+   <div class="well"><a class="fancybox" href="<%= @sale.photo.url %>" data-fancybox-group="gallery" title="<%= truncate @sale.description, length: 90 %>"><img src="<%= @sale.photo.url %>" class="img-polaroid sale-thumb" alt=""></a>
+   </div>
+<table class="table">
+  <thead>
+<th>Monthly Payments</th>
+<th>Training</th>
+<th>Admin Panel</th>
+<th>User Login</th>
+<th>CMS</th>
+<th>Images Provided</th>
+<th>Onsite SEO</th>
+</thead>
+<tbody>
+<tr>
+<td><%= @sale.monthly_payment %></td>
+<td><%= @sale.training %></td>
+<td><%= @sale.admin %></td>
+<td><%= @sale.users %></td>
+<td><%= @sale.cms %></td>
+<td><%= @sale.images %></td>
+<td><%= @sale.seo %></td>
+</tr>
+</tbody>
+
+</table>
+
+
+<div class="row">
+<div class="span5">
+<h5>Description</h5>
+<%= simple_format @sale.description %></div>
+
+<div class="span6">
+<h5>Website features</h5>
+<%= @sale.features %></div>
+</div>
+
+<%= link_to 'Back', sales_path %>
+
+</div></div></div>

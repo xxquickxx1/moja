@@ -1,0 +1,54 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+<%= render 'layouts/breadcrumb' %>
+
+<h5><%= render 'no_records' if @sales.nil? %></h5>
+
+
+<% @sales.each do |sale| %>
+ 
+    
+    <div class="row-fluid margin-bottom-20">
+    <div class="span5"> <%= image_tag sale.photo.url, :'data-src' => 'holder.js/160x120', class: 'img-polaroid' %></div>
+    <div class="span6 padding-20">
+        
+<span class="pull-right"><%= link_to 'Details', sale, class: 'btn btn-success' %></span>
+    <h5>Website Price</h5>
+    <span class="text-info"><%= number_to_currency(sale.price, {:unit => '&pound;'}) %></span>
+    <h5>Description</h5>
+    <p><small> <%= truncate sale.description, length: 280 %></small></p>
+    <% if sale.seo != "" %>
+   <a href="#" class="btn btn-small btn-info disabled">Onsite SEO</a>
+    <% end %>
+    <% if sale.responsive != "" %>
+       <a href="#" class="btn btn-small btn-info disabled">Responsive</a>
+       <% end %>
+        <% if sale.cms != "" %>
+       <a href="#" class="btn btn-small btn-info disabled">CMS</a>
+       <% end %>
+       <% if sale.e_commerce != "" %>
+       <a href="#" class="btn btn-small btn-info disabled">E-commerce</a>
+       <% end %>
+       <% if sale.credit_card != "" %>
+       <a href="#" class="btn btn-small btn-info disabled">CC Payments</a>
+       <% end %>
+
+<hr />
+    <span class="green">Best Fit</span><p class="muted"><small><%= sale.category_fit %></small></p>
+<hr />
+<span class="green">Features</span><p class="muted"><small><%= sale.features %></small></p>
+
+<hr />
+    </div>
+    
+    </div>
+
+<% end %>
+
+</div>
+
+
+</div>
+</div>

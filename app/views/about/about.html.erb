@@ -1,0 +1,138 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span9 white">
+<%= render 'layouts/breadcrumb' %>
+<h3>Welcome to WebDesignStories</h3>
+<hr />
+
+<blockquote><p>“Ruby on Rails is a breakthrough in lowering the barriers of entry to programming.
+Powerful web applications that formerly might have taken weeks or months
+to develop can be produced in a matter of days.”</p>
+ <small><cite title="Source Title">-Tim O'Reilly, Founder of O'Reilly Media</cite></small></blockquote>
+</p>
+<hr />
+<h4>Why Ruby on Rails?
+</h4>
+<p>
+I started my Web Development career few years ago, when I bought my very first book - Html coding.
+For the next months all I've been doing is reading books and tutorials on how to build simple website using those new fancy technologies. Wasn't long when I discovered that building every single website from scratch and write the same code over and over gets frustrating and boring.
+
+I had to find something to help me develop websites faster, better and easier! This is when I discovered frameworks.
+
+<span class="pull-right"><%= image_tag '/images/ruby-on-rails.png' %></span>
+
+First I've learned styling framerwork called "Skeleton", it helped me to understand and build my very first "Responsive Website". But that wasn't all I needed to satisfy future customers, I needed something that will allow me to build websites even faster and with minimum effort when writing very complicated code.</p>
+
+<h4>Ruby on Rails came to me</h4>
+<p>
+My greatest discovery was a programming language called "Ruby". 
+Ruby is an interpreted programming language allowing to write complicated code fast and easy, the fact that I already learned some PHP and JavaScript made it so simple to understand it!<br />
+As I was speaking about the frameworks just above this paragraph, Ruby has a default framework that comes with the installation called Rails - "Ruby on Rails", Rails gave me a huge amount of options to show off! All the advanced stuff I've been learning through last years became so simple and easy! The code that would take me few days to write now with "RoR" takes moments.</p>
+<p>
+I still haven't discovered all the power of Ruby on Rails, but one I know for sure. I will what it takes to become an expert, having an opportunity to work on a large scale websites would be the point in my life when I can say - I've succeeded father. You can now be proud of me.</p>
+
+<p>Please help me to pursue my dream and share this website</p>
+<hr />
+
+<h4>What about - PHP / HTML / CSS?</h4>
+<p>
+Smaller website projects are built using PHP / HTML5 / CSS3 with a touch of jQuery<br />
+We only use Ruby on Rails for projects much bigger than a standard website, we tend to not undertake any projects below the budget of £2000.
+</p>
+
+ <br /><br />
+<h4>Few of the websites using Ruby on Rails</h4>
+<hr />
+<span class="about-thumbs">
+<ul class="thumbnails unstyled">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/basecamp.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/twitter.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/shopify.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/github.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/justintv.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/jango.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/guitarhero.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+
+<ul class="thumbnails">
+  <li>
+    <a href="#" class="thumbnail">
+    <%= image_tag '/images/about/yellowpages.png', :'data-src' => 'holder.js/300x200' %>
+ 
+    </a>
+  </li>
+</ul>
+</span>
+
+
+</div>
+
+<div class="span3 white padding-20">
+<% @testimonials.each do |t| %>
+
+<h6 class="muted"><%= t.name %></h6>
+<blockquote>
+<%= truncate t.description, length: 100 %><br /><%= link_to 'Read more', testimonials_path %>
+</blockquote> 
+
+<% end %>
+
+</div>
+
+</div>
+</div>
+

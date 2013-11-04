@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+     <%= stylesheet_link_tag "bootstrap", :media => "all" %>
+
+</head>
+
+<body class="error-body" style="padding-top: 90px;">
+  <!-- This file lives in public/404.html -->
+  
+<div class="container">
+
+<div class="row-fluid">
+<div class="span4 white padding-20"><h3>You're walking wrong direction..</h3>
+
+<p>The page you're looking for does not exist</p>
+<%= link_to 'Go back', :back %>
+
+</div>
+<div class="span8"><%= image_tag '/images/wrong_direction.jpg', title: 'Photo by: Doug Pinkham', class: 'img-polaroid' %></div>
+</div>
+
+</div>
+
+</body>
+</html>

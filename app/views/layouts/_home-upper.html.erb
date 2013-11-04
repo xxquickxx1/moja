@@ -1,0 +1,129 @@
+<div class="row home-master-head">
+<div class="container">
+<div class="span12">
+<div class="home-flash">
+<span class="pull-left">
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
+</span>
+
+</div>
+
+<div class="pull-right margin-top-20 margin-bottom-20">
+    <ul class="nav nav-pills">
+    <li class="active">
+    <a href="#">Home</a>
+    </li>
+    <li><%= link_to 'Website', websites_path %></li>
+    <li><%= link_to 'SEO', seo_path %></li>
+    <li><a href="#contactModal" data-toggle="modal">Contact</a></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'My Account', dashboard_path %></li>
+    <% else %>
+    <li><%= link_to 'Log In', new_user_session_path %></li>
+    <li><%= link_to 'Register', new_user_registration_path %></li>
+
+    <% end %>
+
+    </ul>
+    
+</div>
+</div>
+
+
+<div class="row-fluid home-form">
+<div class="span12">
+<div class="hero-unit">
+<img src="/images/logoBig.png" style="float:left;" hspace="20px">
+<h1 style="margin-top:40px;" class="Forque">WEB DESIGN STORIES</h1>
+<h2 class="heroh2">&nbsp;<span class="green">Web Development &amp; Design For Small Companies</span></h2>
+<br /><br />
+<p>- Build Your Brand<br />- Start Marketing For Your Target Audience<br />
+- Attract Potential Customers<br />
+- Make Your Way To The Top!</p>
+<span class="pull-right">
+<%= link_to 'New Website', websites_path, class: 'button-link-green big-link animated fadeInUp' %>
+</span>
+<br />
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="row-fluid white home-lower-row  ">
+<%= link_to(websites_path) do %>
+<div class="span4 text-center">
+  <div class="rounded bg-turcus icon"><%= image_tag '/images/icons/Above-The-Fold-40.png', vspace: 40 %>
+  </div>
+  <strong>New Website</strong>
+</div>
+<% end %>
+
+<%= link_to(seo_path) do %>
+<div class="span4 text-center">
+  <div class="rounded bg-orange icon"><%= image_tag '/images/icons/SEO-Tag-40.png', vspace: 40 %>
+  </div>
+  <strong>Search Engine Optimization</strong>
+</div>
+<% end %>
+
+<%= link_to(existingwebsite_path) do %>
+<div class="span4 text-center">
+  <div class="rounded bg-light-red icon"><%= image_tag '/images/icons/Website-Optimization-40.png', vspace: 40 %>
+  </div>
+  <strong>Manage Website</strong>
+</div>
+<% end %>
+
+</div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <span><h3 id="myModalLabel">We're Here To Help!</h3></span>
+    
+  </div>
+  <div class="modal-body">
+<!-- Modal Body -->
+<div class="modalLeftCol">
+<%= simple_form_for @contact do |contact| %>
+  <fieldset>
+  <p class="blue">*All fields are required</p>
+  <%= contact.input :name, placeholder: 'Your full name', label: false %>
+  <%= contact.input :email, placeholder: 'Email address', label: false %>
+  <%= contact.input :phone_number, placeholder: 'Phone number', label: false %>
+  <%= contact.input :message,label: false, placeholder: 'Your message goes here', :input_html => {rows: 10} %>
+  </fieldset>
+
+</div>
+<div class="modalRightCol">
+<img src="/images/logo1.png" style="float:left;" hspace="20px">
+<h4 class="green">Send us a message or simply use one of the options below.</h4>
+<br />
+<h5 class="muted" style="margin-left:20px;">E: info@webdesignstories.com</h5>
+<h5 class="muted" style="margin-left:20px;">Tel: (+44) 7719731397</h5>
+<hr />
+
+</div>
+
+<!-- Modal Body -->
+  </div>
+  <div class="modal-footer">
+<div class="pull-left">
+    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+     <div class="pull-right">
+    <%= button_to 'Send Message',nil, class: 'btn btn-success', controller: 'contacts', action: 'create' %>
+</div>
+    <% end %>
+  </div>
+</div>
+<!-- Contact Modal -->

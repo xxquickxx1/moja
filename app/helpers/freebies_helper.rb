@@ -1,0 +1,2 @@
+module FreebiesHelper
+end

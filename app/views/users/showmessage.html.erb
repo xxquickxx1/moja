@@ -1,0 +1,17 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+<span class="pull-left"><h5>Message from Web Design Stories</h5></span>
+<br />  
+<hr />
+
+<%= @message.subject %>
+<%= @message.description %>
+<%= @message.website_link %>
+<%= button_to 'Discard Message', @message, :method => :delete, class: 'button-link-green' %>
+
+</div>
+</div>
+</div>
+

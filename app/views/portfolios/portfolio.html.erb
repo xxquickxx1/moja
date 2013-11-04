@@ -1,0 +1,29 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white">
+<%= render 'layouts/breadcrumb' %>
+
+<% @portfolio.each do |t| %>
+
+<ul class="thumbnails port">
+  <li>
+    <div class="thumbnail">
+    <%= link_to (image_tag t.photo.url), t %>
+    	<hr />
+
+      <h4 style="padding-left:10px;"><%= t.name %></h4>
+      <hr />
+      <p style="padding-left:10px;"><%= truncate t.description, length: 180 %></p>
+    </div>
+  </li>
+</ul>
+
+
+<% end %>
+
+</div>
+
+
+</div>
+</div>
