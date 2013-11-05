@@ -1,0 +1,26 @@
+<div class="home-container">
+<div class="row-fluid">
+<div class="span12 white">
+<%= render 'layouts/breadcrumb' %>
+<div class="row-fluid">
+<div class="span12 padding-20">
+<% if user_signed_in? %>
+<span class="pull-right"><%= link_to 'New Testimonial', new_testimonial_path, class: 'button-link-green' %></span>
+<% end %>
+<%= @empty if @empty %>
+
+<% @testimonials.each do |t| %>
+<h5 class="testimonial"><%= t.name %> <span class="muted">said:</span></h5>
+<span class="muted"><%= t.website %></span>
+<p><blockquote><%= t.description %></blockquote></p>
+<hr />
+<% end %>
+
+
+</div></div>
+</div>
+
+</div>
+</div>
+
+

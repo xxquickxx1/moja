@@ -1,0 +1,34 @@
+<div class="home-container">
+<div class="row-fluid rounded-box white">
+<div class="span12">
+<%= render 'layouts/breadcrumb' %>
+<div class="row-fluid">
+<div class="span12  padding-20">
+
+<% if current_user && current_user.admin? %>
+<div class="pull-right">
+<%= link_to 'New Freebie', new_freeby_freesite_path(:action => :new), class: 'button-link-green' %>
+<hr />
+</div>
+
+<% end %>
+
+<% @freebies.each do |freebie| %>
+	<div class="row-fluid">
+	<div class="span12 well relative">
+	<span class="pull-right freesite-link-right"><%= link_to 'See More', freeby_freesites_path + "/#{freebie.id}", class: 'button-link' %></span>
+	<div class="row-fluid">
+	<div class="span5"><%= image_tag(freebie.photo.url, class: 'img-polaroid') %></div>
+	<div class="span7 padding-left-20"><h4><%= link_to freebie.name, freeby_freesites_path + "/#{freebie.id}" %></h4>
+	<p><%= simple_format freebie.description %></p>
+	</div>
+	</div>
+	</div>
+	</div>
+<% end %>
+
+<a href="/zips/lol.zip" download>Download link</a>
+</div></div>
+</div>
+</div>
+</div>

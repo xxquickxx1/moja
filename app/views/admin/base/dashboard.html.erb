@@ -1,0 +1,25 @@
+<div class="home-container">
+<div class="row-fluid white padding-20 rounded-box">
+<div class="span4">
+<%= render partial: 'admin/shared/nav_tab' %>
+</div>
+
+<div class="span8">
+
+<% @message = Contact.all %>
+<% @message.each do |message| %>
+
+<%= link_to message.email, admin_message_path(message) %>
+<span class="pull-right"><%= link_to 'Destroy', :controller => 'messages', :action => 'destroy', contact_id: message.id %></span>
+
+<hr />
+
+<% end %>
+
+</div>
+</div>
+
+
+
+
+</div>

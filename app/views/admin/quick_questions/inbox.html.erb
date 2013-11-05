@@ -1,0 +1,31 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+ 
+<div class="row-fluid">
+<div class="span4">
+<%= render partial: 'admin/shared/nav_tab' %>
+</div>
+
+<div class="span8">
+<% @questions.each do |question| %>
+<div class="inbox-row">
+<span class="pull-right"><%= time_ago_in_words(question.created_at).capitalize %> ago</span>
+<%= link_to question.subject, admin_quick_question_path(question) %>
+<br />
+ <%= truncate question.description.capitalize, length: 100 %><br />
+
+<span class="pull-right"><%= link_to 'Read', admin_quick_question_path(question) %> | <%= link_to 'Remove',{:controller => :quick_questions, action: 'destroy', message: question.id}%></span>
+
+ </div>
+
+ <% end %>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="home-container">
+<div class="row-fluid white rounded-box">
+<div class="span12 padding-20">
+
+<h2>Invite Friend</h2>
+
+<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+
+<% resource.class.invite_key_fields.each do |field| -%>
+  <%= f.input field %>
+<% end -%>
+
+<span class="pull-right"><%= button_to t("devise.invitations.new.submit_button"), nil, class: 'button-link-green' %></span>
+<% end %>
+
+
+</div></div>
+</div>

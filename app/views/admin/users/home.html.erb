@@ -1,0 +1,29 @@
+<div class="home-container">
+<div class="row-fluid white padding-20 rounded-box">
+<div class="span12">
+<table class="table">
+<th>#ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Joined</th>
+<th>Signed In Count</th>
+<th>Last Login</th>
+
+<% @users.each do |user| %>
+<tr>
+<td><%= user.id %></td>
+<td><%= user.name %></td>
+<td><%= user.email %></td>
+<td><%= user.created_at.to_formatted_s(:long) %></td>
+<td><%= user.sign_in_count %></td>
+<td><% if user.last_sign_in_at %><%= user.last_sign_in_at.to_formatted_s(:short) %><% else %>Registered Only<% end %></td>
+</tr>
+
+<% end %>
+</table>
+
+
+
+</div>
+</div>
+</div>

@@ -1,0 +1,46 @@
+<div class="home-container">
+<div class="row">
+
+<div class="span12 white">
+<%= render 'layouts/breadcrumb' %>
+<h3 class="green">Checkout</h3>
+<p>Here are details of your item</p>
+<hr />
+ <ul class="thumbnails">
+    <li class="span4">
+    <a href="#" class="thumbnail">
+   <%= image_tag @sale.photo.url, :'data-src' => 'holder.js/160x120' %>
+    </a>
+    </li>
+    <li clas="span4 sale_image_info">
+    
+    <h5>Website price</h5>
+    <h5>Description</h5>
+    <p> <%= truncate @sale.description, lenght: 200 %></p>
+
+    <p>
+    <%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount:  <%= number_to_currency(@price, unit: '£') %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Pay for your website"
+          data-currency="gbp"
+          data-amount="<%= @amount %>">
+  </script>
+
+<% end %>
+</p>
+</li>
+   </ul>
+
+
+
+</div>
+
+</div>
+</div>

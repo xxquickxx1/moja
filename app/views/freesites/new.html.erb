@@ -1,0 +1,16 @@
+<div class="home-container">
+<div class="row-fluid padding-20 white rounded-box">
+<div class="span12">
+
+<%= simple_form_for([@freeby, @freesite], :html => {:multipart => true}) do |t| %>
+
+<%= t.input :name %>
+<%= t.input :description %>
+<%= t.file_field :photo %>
+<%= t.submit %>
+
+<% end %>
+
+</div>
+</div>
+</div>

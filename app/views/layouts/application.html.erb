@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <%= display_meta_tags %>
+<meta name="google-site-verification" content="JJc5kwOw6t9jvDU3dsFuU9uoiMjd4Jop7-f_i5B2uaw" />
+    <%= stylesheet_link_tag "application", "bootstrap", "home", "fancybox", "fancybox-buttons", "animate", :media => "all" %>
+    <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44975824-1', 'webdesignstories.com');
+  ga('send', 'pageview');
+
+</script>
+ <% if controller.action_name != 'index' %>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <nav>
+    <ul>
+    <li><%= link_to root_path do %>
+
+    <%= image_tag '/images/logo1.png', width: '55px', class: 'logo' %>
+
+    <% end %></li>
+      <li class="drop"> <%= link_to 'About', about_path %>
+       <div class="dropdownContain">
+          <div class="dropOut">
+            <div class="triangle"></div>
+            <ul>
+              <li><%= link_to 'Who We Are', whoweare_path %></li>
+              <li><%= link_to 'Process', creation_path %></li>
+              <li><%= link_to 'Testimonials', testimonial_path %></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="drop">
+        <%= link_to 'Website', websites_path %>
+        
+        <div class="dropdownContain">
+          <div class="dropOut">
+            <div class="triangle"></div>
+            <ul>
+              <li><%= link_to 'New Website', websites_path %></li>
+              <li><%= link_to 'Existing Website', existingwebsite_path %></li>
+              <li><%= link_to 'Responsive Design', responsive_path %></li>
+              <li><%= link_to 'Pricing', pricing_path %></li>
+
+            </ul>
+          </div>
+        </div>
+      
+      </li>
+      <li><%= link_to 'SEO', seo_path %></li>
+      
+    <li><%= link_to 'Portfolio', portfolios_path %></li>
+    <li><%= link_to 'Blog', blog_path %></li>
+    <li class="freebies muted">Freebies<span class="label label-warning">Coming Up!</span>
+</li>
+
+
+    <li class="pull-right helpbuttons">
+    <a href="#contactModal" data-toggle="modal" class=" btn btn-success margin-top-10">Contact</a></li>
+   <% if user_signed_in? %>
+
+      
+<li class="drop pull-right">
+         <%= link_to 'My Account', dashboard_path %>
+        
+        <div class="dropdownContain">
+          <div class="dropOut">
+            <div class="triangle"></div>
+            <ul><% if current_user.admin? %>
+            <li><%= link_to 'Admin', admin_root_path %></li>
+            <% end %>
+            <li><%= link_to 'Edit My Details', edit_user_registration_path %></li>
+              <li class="pull-right"><%= link_to 'Sign Out', destroy_user_session_path %></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+
+
+
+    <% else %>
+        <li class="pull-right "><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li class="pull-right "><%= link_to 'Log In', new_user_session_path %></li>
+      <% end %>
+      
+    </ul>
+</nav>
+
+    </div>
+<% end %>
+    <div id="main" role="main">
+     <% if controller.action_name == 'index' %>
+              <%= render 'layouts/home-upper' %>
+              <% end %>
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+             
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <% if controller.action_name == 'index' %>
+         <footer>
+          
+          <%= render 'layouts/footer' %>
+
+          </footer>
+
+          <% else %>
+      </div> <!--! end of .container -->
+<footer>
+          
+          <%= render 'layouts/footer' %>
+
+          </footer>
+    </div> <!--! end of #main -->
+    <% end %>
+
+
+
+<!-- Contact Modal -->
+
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <span><h3 id="myModalLabel">We're Here To Help!</h3></span>
+    
+  </div>
+  <div class="modal-body">
+<!-- Modal Body -->
+<div class="modalLeftCol">
+<%= simple_form_for @contact do |contact| %>
+  <fieldset>
+  <p class="blue">*All fields are required</p>
+  <%= contact.input :name, placeholder: 'Your full name', label: false %>
+  <%= contact.input :email, placeholder: 'Email address', label: false %>
+  <%= contact.input :phone_number, placeholder: 'Phone number', label: false %>
+  <%= contact.input :message,label: false, placeholder: 'Your message goes here', :input_html => {rows: 10} %>
+  </fieldset>
+
+</div>
+<div class="modalRightCol">
+<img src="/images/logo1.png" style="float:left;" hspace="20px">
+<h4 class="green">Send us a message or simply use one of the options below.</h4>
+<br />
+<h5 class="muted" style="margin-left:20px;">E: thomas.webdesign@yahoo.com</h5>
+<h5 class="muted" style="margin-left:20px;">Tel: (+44) 7719731397</h5>
+<hr />
+
+</div>
+
+<!-- Modal Body -->
+  </div>
+  <div class="modal-footer">
+<div class="pull-left">
+    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+     <div class="pull-right">
+    <%= button_to 'Send Message',nil, class: 'btn btn-success', controller: 'contacts', action: 'create' %>
+</div>
+    <% end %>
+  </div>
+</div>
+<!-- Contact Modal -->
+
+    <%= javascript_include_tag "bootstrap", "main" %>
+  </body>
+</html>

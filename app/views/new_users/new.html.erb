@@ -1,0 +1,19 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+<%= render 'layouts/breadcrumb' %>
+
+<%= simple_form_for @user do |t| %>
+
+  <%= t.input :name, :autotocus => true %>
+  <%= t.input :email, :required => true %>
+  <%= t.input :password, :required => true %>
+  <%= t.input :password_confirmation, :required => true %>
+  <%= t.button :submit, 'Sign up', :class => 'btn-primary' %>
+<% end %>
+
+
+</div>
+</div>
+</div>

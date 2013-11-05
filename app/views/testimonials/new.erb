@@ -1,0 +1,27 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white padding-20">
+<%= render 'layouts/breadcrumb' %>
+<h3>Here you can say thank you</h3>
+<%= simple_form_for @testimonial do |t| %>
+
+<%= t.input :name, label: false, placeholder: 'Your name', :input_html => {class: 'input-xxlarge'} %>
+<div class="input-prepend">
+  <span class="add-on">www.</span>
+  <%= t.input :website, label: false, placeholder: 'Your website address..', :input_html => {class: 'prependedInput input-xxlarge'} %>
+</div>
+
+
+<%= t.input :description, :input_html => {rows: 10 } %>
+<%= button_to 'Add Testimonial', nil, class: "button-link-green" %>
+
+
+<% end %>
+
+</div>
+
+</div>
+</div>
+
+

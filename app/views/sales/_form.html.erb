@@ -1,0 +1,26 @@
+<%= simple_form_for @sale, :html => {:multipart => true} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :monthly_payment, label: 'Monthly payments?' %>
+    <%= f.input :cms, label: 'CMS System?' %>
+    <%= f.input :training, label: 'Training for buyer?' %>
+    <%= f.input :description, label: 'Website description' %>
+    <%= f.input :e_commerce, label: 'E-Commerce?' %>
+    <%= f.input :credit_card, label: 'Accept card payments?' %>
+    <%= f.input :admin, label: 'Admin panel?' %>
+    <%= f.input :users, label: 'User registration?' %>
+    <%= f.input :seo, label: 'Onsite SEO?' %>
+    <%= f.input :responsive, label: 'Fits all screen sizes?' %>
+    <%= f.input :contact_form, label: 'Free contact form?' %>
+    <%= f.input :images, label: 'Photos provided?' %>
+    <%= f.input :features, abel: 'Additonal features?' %>
+    <%= f.input :price, label: 'Website price?' %>
+    <%= f.input :category_fit, label: 'Fits which category?' %>
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

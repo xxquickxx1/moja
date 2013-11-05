@@ -1,0 +1,15 @@
+<div class="home-container">
+<div class="row-fluid">
+<div class="span12 padding-20 rounded-box white">
+From: <%= @user.name %> <span class="pull-right"><%= @user.email %></span>
+<hr />
+
+<h5>Subject: <%= @question.subject %> </h5>
+<p>
+<%= @question.description.capitalize!  if @question.description %>
+</p>
+
+<hr />
+<span class="pull-right"><%= link_to 'Reply', new_admin_message_path(:user_id => @question.user.id, :message_id => @question.id) %></span>
+
+</div></div></div>

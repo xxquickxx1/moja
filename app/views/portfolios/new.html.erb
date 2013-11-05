@@ -1,0 +1,10 @@
+<%= simple_form_for @portfolio, :html => {:multipart => true} do |t| %>
+
+<%= t.input :name %>
+<%= t.input :url %>
+<%= t.input :category %>
+<%= t.text_area :description %>
+<%= t.file_field :photo %>
+<%= t.submit 'New project', :class => 'btn btn-success' %>
+
+<% end %>

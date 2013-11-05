@@ -1,0 +1,18 @@
+<div class="home-container">
+<div class="row-fluid padding-20 rounded-box white">
+<div class="span12">
+
+<div class="login-form padding-20">
+<h2>Login Form</h2>
+<p class="muted">Secure login system from Devise</p>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.input :email, :autofocus => true, label: false, placeholder: 'Your email address' %>
+  <%= f.input :password, label: false, placeholder: 'Your password' %>
+ Remember Me?<%= f.input :remember_me, label: false, :as => :boolean if devise_mapping.rememberable? %>
+ <hr />
+  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
+<% end %>
+<hr />
+<%= render "devise/shared/links" %>
+</div>
+</div></div></div>

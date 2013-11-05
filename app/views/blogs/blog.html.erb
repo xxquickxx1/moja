@@ -1,0 +1,24 @@
+<div class="home-container">
+<div class="row-fluid">
+
+<div class="span12 white">
+<%= render 'layouts/breadcrumb' %>
+<div class="row-fluid padding-20">
+<div class="span11">
+
+<% @blogs.each do |blog| %>
+  <span class="pull-right blue">Posted: <%= time_ago_in_words(blog.created_at) %> ago</span>
+    <h4><%= link_to blog.title.gsub('-', ' '), "/blogs/#{blog.title}", id: blog.id %></h4>
+    <p class="muted">Category: <%= blog.category %></p>
+    <p><%= truncate blog.description, length: 200 %></p>
+
+    <%= link_to 'Read', :controller => 'blogs', :action => 'show', :id => blog %>
+<hr />
+  
+<% end %>
+
+</div></div>
+</div>
+
+</div>
+</div>
