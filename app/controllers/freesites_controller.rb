@@ -13,6 +13,7 @@ def home
 end
 
 def new
+	  	set_meta_tags :nofollow => true
 @freesite = @freeby.freesites.build
 
 end
@@ -27,6 +28,7 @@ end
 
 
 def create
+	  	set_meta_tags :nofollow => true
 	@freesite = @freeby.freesites.build(params[:freesite])
 		if @freesite.save
 			redirect_to freeby_freesites_path, notice: 'Nice you have created a freesite'

@@ -2,8 +2,6 @@ class Admin::MessagesController < Admin::BaseController
 
 
   def find_user
-  	set_meta_tags :nofollow => true
-
 set_meta_tags :nofollow => true
 
   	@user = User.find(params[:user_id])
