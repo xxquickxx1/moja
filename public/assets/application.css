@@ -499,6 +499,7 @@ form.simple_form {
 
 /* line 452, ../../app/assets/stylesheets/application.css.scss */
 .hero-unit h1 {
+<<<<<<< HEAD
 }
 /* line 456, ../../app/assets/stylesheets/application.css.scss */
 .hero-unit h1.Forque {
@@ -512,6 +513,23 @@ form.simple_form {
 /* line 466, ../../app/assets/stylesheets/application.css.scss */
 .hero-unit h1.addEffect {
   
+=======
+  color: rgba(255, 255, 255, 0.2);
+}
+/* line 456, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h1.Forque {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 2.9em;
+  transition: text-shadow 3s ease;
+  text-shadow: 0px 0px 100px white;
+  -webkit-transition: text-shadow 3s ease;
+  -moz-transition: text-shadow 3s ease;
+  -o-transition: text-shadow 3s ease;
+}
+/* line 466, ../../app/assets/stylesheets/application.css.scss */
+.hero-unit h1.addEffect {
+  text-shadow: 0px 0px 2px white;
+>>>>>>> 27d5b4b9208a95c8fa5249434794cf8875171448
 }
 /* line 470, ../../app/assets/stylesheets/application.css.scss */
 .hero-unit h2.heroh2 {
@@ -523,7 +541,10 @@ form.simple_form {
 /* line 477, ../../app/assets/stylesheets/application.css.scss */
 .hero-unit p {
   font-family: nevis;
+<<<<<<< HEAD
   color:white;
+=======
+>>>>>>> 27d5b4b9208a95c8fa5249434794cf8875171448
 }
 
 /* line 482, ../../app/assets/stylesheets/application.css.scss */
