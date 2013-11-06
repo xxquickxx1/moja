@@ -21,13 +21,13 @@
 	<div class="span5"><%= image_tag(freebie.photo.url, class: 'img-polaroid') %></div>
 	<div class="span7 padding-left-20"><h4><%= link_to freebie.name, freeby_freesites_path + "/#{freebie.id}" %></h4>
 	<p><%= simple_format freebie.description %></p>
+	<a href="/zips/<%= freebie.download_name %>.zip" download>Download</a>
 	</div>
 	</div>
 	</div>
 	</div>
 <% end %>
 
-<a href="/zips/lol.zip" download>Download link</a>
 </div></div>
 </div>
 </div>
