@@ -27,7 +27,7 @@ end
   # GET /websites/new.json
   def new
     @page_title = "Web Design Cost Calculator | Instant Website Price"
-   @page_description = "Free onsite SEO with every new website built with Web Design Stories. We specialize in small companies sector, build your brand and become one of the successful companies."
+   @page_description = "Web Design Cost Calculator - Web Design Calculator. Instant website price, web design in edinburgh."
    @page_keywords    = 'Web Design Calculator, Website calculator, web development price calculator, price calculator website, website, calculator'
  
     @breadcrumb = "New Website"
