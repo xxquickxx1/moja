@@ -8,6 +8,7 @@
     <%= javascript_include_tag "application", "jquery", "jquery.fancybox", "fancybox-buttons" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.png' %>
+    <link rel="canonical" href="http://www.example.com" />
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
