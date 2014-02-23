@@ -3,8 +3,8 @@ class FreebiesController < ApplicationController
 
   def home
   	@freeby = Freeby.all
-    @page_description = "100% Free websites for commercial or private use. No contracts no sign up!"
-   @page_title = "Freebies | Free website | Web Design in Edinburgh"
+    @page_description = "100% Free websites and websit templates for commercial or private use. No contracts no sign up!"
+   @page_title = "Free Web Design Edinburgh | Free Website Templates Edinburgh"
    @page_keywords    = 'Web Design, Website Development, Cheap SEO, Web Designer, Free website, websites for free, free web design, Cheap Website,business, Get more customers'
     @breadcrumb = ""
   end
