@@ -47,6 +47,7 @@ resources :inquiries, :only => [:new, :create] do
   get 'thank_you', :on => :collection
 end
 
+  get '/blog/:id/', to: 'blogs#destroy', as: :destroy_blog
   get '/blog/new', to: 'blogs#new'
    get '/blog/:title', to: 'blogs#show', as: :showblog
   get '/blog', to: 'blogs#blog', as: :blog

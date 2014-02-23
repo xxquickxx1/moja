@@ -85,10 +85,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-
-    respond_to do |format|
-      format.html { redirect_to blogs_url }
-      format.json { head :no_content }
-    end
+    redirect_to :back, notice: 'Your blog post has been destroyed.'
+    
   end
 end

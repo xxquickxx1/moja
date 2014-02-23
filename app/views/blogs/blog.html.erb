@@ -13,6 +13,10 @@
     <p><%= truncate blog.description, length: 200 %></p>
 
     <%= link_to 'Read', :controller => 'blogs', :action => 'show', :id => blog %>
+    <% if current_user && current_user.admin? %>
+    <%= link_to 'Edit', :controller => 'blogs', :action => 'edit', :id => blog %>
+    <%= link_to 'Delete', destroy_blog_path(id: blog.id) %>
+    <% end %>
 <hr />
   
 <% end %>
