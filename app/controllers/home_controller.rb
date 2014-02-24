@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   # Pages controller
   def index
-@page_title       = 'Web Development & Design For Small Companies in Edinburgh'
+@page_title       = 'Web Development & Design For Small Companies'
 @page_description = 'Web Design Stories specialize in Web Development & Design for small businesses in Edinburgh. We work only with small companies in Edinburgh therefore we focus on your needs!'
 @page_keywords    = 'Web Design, Web Development, SEO, Branding, Small Company, Website for small company, Grow your small business, small business'
     @portfolio = Portfolio.order("created_at DESC").limit(3)
