@@ -66,8 +66,8 @@ Webdesignstories::Application.configure do
     domain: "webdesignstories.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "xxquickxx1",
-    password: "mojasunia20"
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
 
 
